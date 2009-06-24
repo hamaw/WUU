@@ -6,8 +6,8 @@ wowi_version	Date:.+?"smallfont">(\d{2})-(\d{2})-(\d{4})\s(\d{2}):(\d{2})\s(\w{2
 auct_version	<a\shref="\?dl=(%s/([0-9a-zA-Z\.-]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
 auct_version2	href="\?dl=Release/(%s-([0-9a-zA-Z\.]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
 gath_version	<a\shref="\?dl=(%s/([0-9a-zA-Z\._-]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
-wowace_version	Last Update:.*\n.*data-epoch="(\d+)">
-wowace_dlversion	<a\shref="\/projects\/%s\/files\/(.*)\/"><span>Download</span></a>
+wowace_version	Last update.*data-epoch="(\d+)">
+wowace_dlversion	<li><a href="\/projects\/%s\/files\/(.*)\/" class="user-action user-action-download">Download
 wowace_version2	\/(.+)\/\1-r(.+)\.zip\">
 cosmos_mversion	t=addons&f=([a-zA-Z0-9]+?\.zip)".+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday))<br./>
 cosmos_version	t=addons&f=(%s\.zip)".+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday))<br./>
