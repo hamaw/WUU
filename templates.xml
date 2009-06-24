@@ -1,0 +1,75 @@
+<wurm><templates>
+<othersites>
+<templatename>Converse</templatename>
+<parm name="Siteid" type="str">http://cot.freeshell.org/WoW/UIMods/</parm>
+<parm name="AddonPage" type="str"></parm>
+<parm name="VerRegExp" type="str">&gt;Conversation Manager v(.+?)&lt;</parm>
+<parm name="VerIsDate" type="bool">False</parm>
+<parm name="DateFormat" type="str">Month Day Year</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">&lt;a\shref=&quot;%(name)s.+\.(.+?)&quot;&gt;</parm>
+<parm name="ExtnIsName" type="bool">False</parm>
+<parm name="DLNameExp" type="str">%(site)s%(name)s-%(ver)s-20000.%(ext)s</parm>
+</othersites>
+<othersites>
+<templatename>Gatherer Database</templatename>
+<parm name="Siteid" type="str">http://gathereraddon.com/dl/GathererDB/</parm>
+<parm name="AddonPage" type="str">?all=1</parm>
+<parm name="VerRegExp" type="str">href=&quot;%(name)s.+(\d{4})-(\d{2})-(\d{2}).+&quot;&gt;</parm>
+<parm name="VerIsDate" type="bool">True</parm>
+<parm name="DateFormat" type="str">Year Month Day</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">href=&quot;(%(name)s.+)&quot;&gt;</parm>
+<parm name="ExtnIsName" type="bool">True</parm>
+<parm name="DLNameExp" type="str">%(site)s%(dlname)s</parm>
+</othersites>
+<othersites>
+<templatename>Aquendyn's World of Warcraft Addons</templatename>
+<parm name="Siteid" type="str">http://www.sagez.net/amuseum/wow/</parm>
+<parm name="AddonPage" type="str">addons.html</parm>
+<parm name="VerRegExp" type="str">%(fname)s.+\n.+Updated\s(.+?)\.\s(\d+),\s'(\d+)</parm>
+<parm name="VerIsDate" type="bool">True</parm>
+<parm name="DateFormat" type="str">Month Day Year</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">&lt;a\shref=&quot;%(name)s\.(.+?)&quot; &gt;</parm>
+<parm name="ExtnIsName" type="bool">False</parm>
+<parm name="DLNameExp" type="str">%(site)s%(name)s.%(ext)s</parm>
+</othersites>
+<othersites>
+<templatename>Mob Map</templatename>
+<parm name="Siteid" type="str">http://www.mobmap.de/</parm>
+<parm name="AddonPage" type="str">addon.php</parm>
+<parm name="VerRegExp" type="str">href="dodownload.php\?dl=files\/%(name)s(\d+?)\.%(ext)s"&lt;</parm>
+<parm name="VerIsDate" type="bool">False</parm>
+<parm name="DateFormat" type="str">Month Day Year</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">href="dodownload.php\?dl=files\/%(name)s\d+\.(.+?)"&gt;</parm>
+<parm name="ExtnIsName" type="bool">False</parm>
+<parm name="DLNameExp" type="str">%(site)sfiles/%(name)s%(ver)s.%(ext)s</parm>
+</othersites>
+<othersites>
+<templatename>Tekkub's Git Repository</templatename>
+<parm name="Siteid" type="str">http://git.tekkub.net:81/%(name)s/</parm>
+<parm name="AddonPage" type="str">commit</parm>
+<parm name="VerRegExp" type="str">class='right'&gt;(\d{4})-(\d{2})-(\d{2}).+?&lt;</parm>
+<parm name="VerIsDate" type="bool">True</parm>
+<parm name="DateFormat" type="str">Year Month Day</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">href='/%(name)s/snapshot/%(name)s-master\.(.+?)'&gt;</parm>
+<parm name="ExtnIsName" type="bool">False</parm>
+<parm name="DLNameExp" type="str">%(site)ssnapshot/%(name)s-master.%(ext)s</parm>
+</othersites>
+<child>
+<templatename>Mob Map Database</templatename>
+<parm name="Siteid" type="str">http://www.mobmap.de/</parm>
+<parm name="AddonPage" type="str">download.php</parm>
+<parm name="VerRegExp" type="str">Ignore</parm>
+<parm name="VerIsDate" type="bool">False</parm>
+<parm name="DateFormat" type="str">Month Day Year</parm>
+<parm name="VerIsLast" type="bool">False</parm>
+<parm name="ExtnRegExp" type="str">href="dodownload.php\?dl=database\/%(fname)s\.(.+?)&amp;</parm>
+<parm name="ExtnIsName" type="bool">False</parm>
+<parm name="DLNameExp" type="str">%(site)sdatabase/%(fname)s.%(ext)s</parm>
+<parm name="Parent" type="str">MobMap</parm>
+</child>
+</templates></wurm>

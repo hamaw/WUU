@@ -1,0 +1,1779 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wurm>
+  <wurmlanguages>
+    <languagedef code="no" name="Norsk" version="387">
+      <string>
+        <original>Dummy Addon</original>
+        <translation>Dummy-tillegg</translation>
+      </string>
+      <string>
+        <original>Ignore this Addon</original>
+        <translation>Ignorer dette tillegget</translation>
+      </string>
+      <string>
+        <original>Addon won't be updated anymore</original>
+        <translation>Tillegg vil ikke bli oppdatert mer</translation>
+      </string>
+      <string>
+        <original>Addon is related to/comes with another Addon</original>
+        <translation>Tillegget er relatert til/kommer med et annet tillegg</translation>
+      </string>
+      <string>
+        <original>Site ID is Addon this one comes with</original>
+        <translation>Side-ID er navnet på tillegget dette tillegget kommer med</translation>
+      </string>
+      <string>
+        <original>Addon source unknown</original>
+        <translation>Tilleggskilden er ukjent</translation>
+      </string>
+      <string>
+        <original>Site ID is directory name</original>
+        <translation>Side-ID er katalognavnet</translation>
+      </string>
+      <string>
+        <original>Site ID is numeric + Addon name from site. e.g.: "5001-Minimalist"</original>
+        <translation>Side-ID is tall+tilleggsnavn fra siden. F.eks.: "5001-Minimalist"</translation>
+      </string>
+      <string>
+        <original>Site ID is the part of the Addon URL after /details/, e.g.: "2003" or "sw-stats"</original>
+        <translation>Side-ID er delen av URL som kommer etter /details/, f.eks.: "2003" eller "sw-stats"</translation>
+      </string>
+      <string>
+        <original>Site ID is the part after f= in the download URL</original>
+        <translation>Side-ID er tallet etter f= i URLen</translation>
+      </string>
+      <string>
+        <original>Site ID is developer name. e.g.:"tekkub-wow"</original>
+        <translation>Side-ID er utvikler-navnet. f.eks.:"tekkub-wow"</translation>
+      </string>
+      <string>
+        <original>Site ID is [branches|tags|trunk] followed by Addonname optionally followed by developer/version etc,\n e.g.: --&gt; branches/!!Warmup/ckknight\n --&gt; tags/lern2count/1.12/lern2count_plugins/lern2count_bongos\n --&gt; trunk/Zookeeper</original>
+        <translation>Side-ID er [branches|tags|trunk] fulgt av navnet på tillegget eventuelt fulgt av utvikler/versjon etc,\n f.eks.: --&gt; branches/!!Warmup/ckknight\n --&gt; tags/lern2count/1.12/lern2count_plugins/lern2count_bongos\n --&gt; trunk/Zookeeper</translation>
+      </string>
+      <string>
+        <original>Please refer to %(wuuki)sOtherSites for Instructions</original>
+        <translation>Referer til %(wuuki)sOtherSites for instruksjoner (kun på engelsk)</translation>
+      </string>
+      <string>
+        <original>WUU cannot access this site anymore</original>
+        <translation>WUU har ikke tilgang til denne siden lenger</translation>
+      </string>
+      <string>
+        <original>Autoloading settings</original>
+        <translation>Laster inn innstillinger automatisk</translation>
+      </string>
+      <string>
+        <original>--- READY ---</original>
+        <translation>--- KLAR ---</translation>
+      </string>
+      <string>
+        <original>%(addon)s version checked</original>
+        <translation>%(addon)s versjonssjekket</translation>
+      </string>
+      <string>
+        <original>%(addon)s deleted successfully</original>
+        <translation>%(addon)s slettet</translation>
+      </string>
+      <string>
+        <original>%(addon)s restored successfully</original>
+        <translation>%(addon)s gjenopprettet</translation>
+      </string>
+      <string>
+        <original>%(addon)s smartupdated successfully</original>
+        <translation>%(addon)s smartupdated successfully</translation>
+      </string>
+      <string>
+        <original>%(addon)s updated successfully</original>
+        <translation>%(addon)s updated successfully</translation>
+      </string>
+      <string>
+        <original>%(addon)s installed successfully</original>
+        <translation>%(addon)s installert</translation>
+      </string>
+      <string>
+        <original>All Addons version checked</original>
+        <translation>Alle tillegg er versjonssjekket</translation>
+      </string>
+      <string>
+        <original>All Addons installed</original>
+        <translation>Alle tillegg er installert</translation>
+      </string>
+      <string>
+        <original>All Addons updated</original>
+        <translation>Alle tillegg er oppdatert</translation>
+      </string>
+      <string>
+        <original>only if update was needed</original>
+        <translation>bare om oppdatering var nødvendig</translation>
+      </string>
+      <string>
+        <original>All Addons %(cmd)sd</original>
+        <translation>Alle tillegg er %(cmd)s</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons loaded</original>
+        <translation>%(num)d tillegg lastet</translation>
+      </string>
+      <string>
+        <original>Welcome to WUU</original>
+        <translation>Velkommen til WUU</translation>
+      </string>
+      <string>
+        <original>Directory</original>
+        <translation>Katalog</translation>
+      </string>
+      <string>
+        <original>Site</original>
+        <translation>Side</translation>
+      </string>
+      <string>
+        <original>Friendly name</original>
+        <translation>Leselig navn</translation>
+      </string>
+      <string>
+        <original>Local ver.</original>
+        <translation>Lokal ver.</translation>
+      </string>
+      <string>
+        <original>Online ver.</original>
+        <translation>Online ver.</translation>
+      </string>
+      <string>
+        <original>Upd?</original>
+        <translation>Oppd?</translation>
+      </string>
+      <string>
+        <original>Res?</original>
+        <translation>Gjn?</translation>
+      </string>
+      <string>
+        <original>Update</original>
+        <translation>Oppdater</translation>
+      </string>
+      <string>
+        <original>Check version</original>
+        <translation>Sjekk versjon</translation>
+      </string>
+      <string>
+        <original>Set selected to site</original>
+        <translation>Sett valgte til side</translation>
+      </string>
+      <string>
+        <original>Addon List</original>
+        <translation>Tilleggsliste</translation>
+      </string>
+      <string>
+        <original>Event Log</original>
+        <translation>Hendelseslogg</translation>
+      </string>
+      <string>
+        <original>&amp;Open\tCtrl+O</original>
+        <translation>&amp;Åpne\tCtrl+O</translation>
+      </string>
+      <string>
+        <original>Load Addon list</original>
+        <translation>Last inn tilleggsliste</translation>
+      </string>
+      <string>
+        <original>&amp;Save\tCtrl+S</original>
+        <translation>&amp;Lagre\tCtrl+S</translation>
+      </string>
+      <string>
+        <original>Save Addon list</original>
+        <translation>Lagre tilleggsliste</translation>
+      </string>
+      <string>
+        <original>Import</original>
+        <translation>Importer</translation>
+      </string>
+      <string>
+        <original>Export</original>
+        <translation>Eksporter</translation>
+      </string>
+      <string>
+        <original>&amp;Quit\tCtrl+Q</original>
+        <translation>&amp;Avslutt\tCtrl+Q</translation>
+      </string>
+      <string>
+        <original>Quit WUU</original>
+        <translation>Avslutt WUU</translation>
+      </string>
+      <string>
+        <original>Addons...</original>
+        <translation>Tillegg...</translation>
+      </string>
+      <string>
+        <original>Import Addons from file</original>
+        <translation>Import Addons from file</translation>
+      </string>
+      <string>
+        <original>Sites...</original>
+        <translation>Sites...</translation>
+      </string>
+      <string>
+        <original>Imports Addon site settings from file, only for addons already on your list</original>
+        <translation>Imports Addon site settings from file, only for addons already on your list</translation>
+      </string>
+      <string>
+        <original>from addonpack</original>
+        <translation>from addonpack</translation>
+      </string>
+      <string>
+        <original>Imports Addons from an addon pack ID</original>
+        <translation>Imports Addons from an addon pack ID</translation>
+      </string>
+      <string>
+        <original>All addons</original>
+        <translation>All addons</translation>
+      </string>
+      <string>
+        <original>Export Addons to file</original>
+        <translation>Export Addons to file</translation>
+      </string>
+      <string>
+        <original>Selected addons</original>
+        <translation>Selected addons</translation>
+      </string>
+      <string>
+        <original>Exports all currently selected Addons to file</original>
+        <translation>Exports all currently selected Addons to file</translation>
+      </string>
+      <string>
+        <original>One-Button Update\tF10</original>
+        <translation>One-Button Update\tF10</translation>
+      </string>
+      <string>
+        <original>Version check and, if needed, update all Addons</original>
+        <translation>Version check and, if needed, update all Addons</translation>
+      </string>
+      <string>
+        <original>&amp;New\tCtrl+N</original>
+        <translation>&amp;New\tCtrl+N</translation>
+      </string>
+      <string>
+        <original>Insert a New entry into the Addon List</original>
+        <translation>Insert a New entry into the Addon List</translation>
+      </string>
+      <string>
+        <original>&amp;Delete</original>
+        <translation>&amp;Delete</translation>
+      </string>
+      <string>
+        <original>Delete the selected Addons and all related</original>
+        <translation>Delete the selected Addons and all related</translation>
+      </string>
+      <string>
+        <original>&amp;Restore from Backup\tCtrl+R</original>
+        <translation>&amp;Restore from Backup\tCtrl+R</translation>
+      </string>
+      <string>
+        <original>Restore the selected Addons from Backup</original>
+        <translation>Restore the selected Addons from Backup</translation>
+      </string>
+      <string>
+        <original>S&amp;can Directory\tCtrl+D</original>
+        <translation>S&amp;can Directory\tCtrl+D</translation>
+      </string>
+      <string>
+        <original>Scan WoW Addon directory</original>
+        <translation>Scan WoW Addon directory</translation>
+      </string>
+      <string>
+        <original>Check &amp;online version\tCtrl+V</original>
+        <translation>Check &amp;online version\tCtrl+V</translation>
+      </string>
+      <string>
+        <original>Checks all the Addon sites for new versions</original>
+        <translation>Checks all the Addon sites for new versions</translation>
+      </string>
+      <string>
+        <original>Update to Latest\tCtrl+U</original>
+        <translation>Update to Latest\tCtrl+U</translation>
+      </string>
+      <string>
+        <original>Updates all older Addons - online version must be known for this to work!</original>
+        <translation>Updates all older Addons - online version must be known for this to work!</translation>
+      </string>
+      <string>
+        <original>Update from Online DB\t%(key)s</original>
+        <translation>Update from Online DB\t%(key)s</translation>
+      </string>
+      <string>
+        <original>Gets Addon site settings from the online database (user-submitted, only affects [Unknown] Addons)</original>
+        <translation>Gets Addon site settings from the online database (user-submitted, only affects [Unknown] Addons)</translation>
+      </string>
+      <string>
+        <original>Install from</original>
+        <translation>Install from</translation>
+      </string>
+      <string>
+        <original>&amp;Copy to BBCode</original>
+        <translation>&amp;Copy to BBCode</translation>
+      </string>
+      <string>
+        <original>Copy a list of the selected Addons to BBCode for forums</original>
+        <translation>Copy a list of the selected Addons to BBCode for forums</translation>
+      </string>
+      <string>
+        <original>WoWAce\tCtrl+W</original>
+        <translation>WoWAce\tCtrl+W</translation>
+      </string>
+      <string>
+        <original>Lets you install Addons directly from WoWAce</original>
+        <translation>Lets you install Addons directly from WoWAce</translation>
+      </string>
+      <string>
+        <original>CosmosUI</original>
+        <translation>CosmosUI</translation>
+      </string>
+      <string>
+        <original>Lets you install Addons directly from CosmosUI</original>
+        <translation>Lets you install Addons directly from CosmosUI</translation>
+      </string>
+      <string>
+        <original>URL...</original>
+        <translation>URL...</translation>
+      </string>
+      <string>
+        <original>Installs a single Addon, given the URL to its web page (Experimental, might not work, doesn\'t support all sites yet)</original>
+        <translation>Installs a single Addon, given the URL to its web page (Experimental, might not work, doesn\'t support all sites yet)</translation>
+      </string>
+      <string>
+        <original>Hide dummy</original>
+        <translation>Hide dummy</translation>
+      </string>
+      <string>
+        <original>Hides [Dummy] addons</original>
+        <translation>Hides [Dummy] addons</translation>
+      </string>
+      <string>
+        <original>Hide ignored</original>
+        <translation>Hide ignored</translation>
+      </string>
+      <string>
+        <original>Hides [Ignore]d addons</original>
+        <translation>Hides [Ignore]d addons</translation>
+      </string>
+      <string>
+        <original>Hide outdated</original>
+        <translation>Hide outdated</translation>
+      </string>
+      <string>
+        <original>Hides [Outdated] addons</original>
+        <translation>Hides [Outdated] addons</translation>
+      </string>
+      <string>
+        <original>Hide related</original>
+        <translation>Hide related</translation>
+      </string>
+      <string>
+        <original>Hides [Related] addons</original>
+        <translation>Hides [Related] addons</translation>
+      </string>
+      <string>
+        <original>Clean &amp;temp dir\tCtrl-T</original>
+        <translation>Clean &amp;temp dir\tCtrl-T</translation>
+      </string>
+      <string>
+        <original>Cleans out the temp dir WUU uses to store downloaded addon archives</original>
+        <translation>Cleans out the temp dir WUU uses to store downloaded addon archives</translation>
+      </string>
+      <string>
+        <original>Check site regexps</original>
+        <translation>Check site regexps</translation>
+      </string>
+      <string>
+        <original>Checks WUU site for updated regular expressions</original>
+        <translation>Checks WUU site for updated regular expressions</translation>
+      </string>
+      <string>
+        <original>Fix missing deps</original>
+        <translation>Fix missing deps</translation>
+      </string>
+      <string>
+        <original>Scans for missing dependencies, and tries to install them from the master list</original>
+        <translation>Scans for missing dependencies, and tries to install them from the master list</translation>
+      </string>
+      <string>
+        <original>Upload your addon list</original>
+        <translation>Upload your addon list</translation>
+      </string>
+      <string>
+        <original>BETA FEATURE: Uploads your addon list to the WUU web page, for future inclusion in the master list</original>
+        <translation>BETA FEATURE: Uploads your addon list to the WUU web page, for future inclusion in the master list</translation>
+      </string>
+      <string>
+        <original>Purge missing addons</original>
+        <translation>Purge missing addons</translation>
+      </string>
+      <string>
+        <original>Removes all addons that are deleted outside WUU from the internal addon list</original>
+        <translation>Removes all addons that are deleted outside WUU from the internal addon list</translation>
+      </string>
+      <string>
+        <original>Changelog report</original>
+        <translation>Changelog report</translation>
+      </string>
+      <string>
+        <original>Generates a report on the last update</original>
+        <translation>Generates a report on the last update</translation>
+      </string>
+      <string>
+        <original>WoWAce Tools</original>
+        <translation>WoWAce Tools</translation>
+      </string>
+      <string>
+        <original>Preferences...</original>
+        <translation>Preferences...</translation>
+      </string>
+      <string>
+        <original>Change WUU preferences</original>
+        <translation>Change WUU preferences</translation>
+      </string>
+      <string>
+        <original>Remove Embedded Libraries</original>
+        <translation>Remove Embedded Libraries</translation>
+      </string>
+      <string>
+        <original>Remove ALL Embedded Libraries for ALL WoWAce Addons</original>
+        <translation>Remove ALL Embedded Libraries for ALL WoWAce Addons</translation>
+      </string>
+      <string>
+        <original>Prune TOC files</original>
+        <translation>Prune TOC files</translation>
+      </string>
+      <string>
+        <original>Remove ALL missing Library entries from ALL WoWAce Addon''s TOC files</original>
+        <translation>Remove ALL missing Library entries from ALL WoWAce Addon''s TOC files</translation>
+      </string>
+      <string>
+        <original>WUU Website\tF1</original>
+        <translation>WUU Website\tF1</translation>
+      </string>
+      <string>
+        <original>Opens the WUU Website in your browser</original>
+        <translation>Opens the WUU Website in your browser</translation>
+      </string>
+      <string>
+        <original>WUUki\tCtrl+F1</original>
+        <translation>WUUki\tCtrl+F1</translation>
+      </string>
+      <string>
+        <original>Opens the WUUki in your browser</original>
+        <translation>Opens the WUUki in your browser</translation>
+      </string>
+      <string>
+        <original>WUU@SourceForge</original>
+        <translation>WUU@SourceForge</translation>
+      </string>
+      <string>
+        <original>Opens the WUU SourceForge project in your browser</original>
+        <translation>Opens the WUU SourceForge project in your browser</translation>
+      </string>
+      <string>
+        <original>AceSVN</original>
+        <translation>AceSVN</translation>
+      </string>
+      <string>
+        <original>Opens AceSVN site in your browser</original>
+        <translation>Opens AceSVN site in your browser</translation>
+      </string>
+      <string>
+        <original>Auctioneer</original>
+        <translation>Auctioneer</translation>
+      </string>
+      <string>
+        <original>Opens AuctioneerAddon site in your browser</original>
+        <translation>Opens AuctioneerAddon site in your browser</translation>
+      </string>
+      <string>
+        <original>CapnBry</original>
+        <translation>CapnBry</translation>
+      </string>
+      <string>
+        <original>Opens CapnBry site in your browser</original>
+        <translation>Opens CapnBry site in your browser</translation>
+      </string>
+      <string>
+        <original>Opens CosmosUI site in your browser</original>
+        <translation>Opens CosmosUI site in your browser</translation>
+      </string>
+      <string>
+        <original>CTMod</original>
+        <translation>CTMod</translation>
+      </string>
+      <string>
+        <original>Opens CTMod site in your browser</original>
+        <translation>Opens CTMod site in your browser</translation>
+      </string>
+      <string>
+        <original>CurseGaming</original>
+        <translation>CurseGaming</translation>
+      </string>
+      <string>
+        <original>Opens CurseGaming site in your browser</original>
+        <translation>Opens CurseGaming site in your browser</translation>
+      </string>
+      <string>
+        <original>Gatherer</original>
+        <translation>Gatherer</translation>
+      </string>
+      <string>
+        <original>Opens GathererAddon site in your browser</original>
+        <translation>Opens GathererAddon site in your browser</translation>
+      </string>
+      <string>
+        <original>GoogleCode</original>
+        <translation>GoogleCode</translation>
+      </string>
+      <string>
+        <original>Opens GoogleCode site in your browser</original>
+        <translation>Opens GoogleCode site in your browser</translation>
+      </string>
+      <string>
+        <original>UIWoW</original>
+        <translation>UIWoW</translation>
+      </string>
+      <string>
+        <original>Opens ui.worldofwar.net site in your browser</original>
+        <translation>Opens ui.worldofwar.net site in your browser</translation>
+      </string>
+      <string>
+        <original>WoWAce</original>
+        <translation>WoWAce</translation>
+      </string>
+      <string>
+        <original>Opens WoWAce site in your browser</original>
+        <translation>Opens WoWAce site in your browser</translation>
+      </string>
+      <string>
+        <original>WoWI</original>
+        <translation>WoWI</translation>
+      </string>
+      <string>
+        <original>Opens WoWInterface site in your browser</original>
+        <translation>Opens WoWInterface site in your browser</translation>
+      </string>
+      <string>
+        <original>Open Addon dir</original>
+        <translation>Open Addon dir</translation>
+      </string>
+      <string>
+        <original>Opens the WoW Addon dir</original>
+        <translation>Opens the WoW Addon dir</translation>
+      </string>
+      <string>
+        <original>&amp;About</original>
+        <translation>&amp;About</translation>
+      </string>
+      <string>
+        <original>About WUU</original>
+        <translation>About WUU</translation>
+      </string>
+      <string>
+        <original>&amp;File</original>
+        <translation>&amp;File</translation>
+      </string>
+      <string>
+        <original>&amp;Addon</original>
+        <translation>&amp;Addon</translation>
+      </string>
+      <string>
+        <original>&amp;View</original>
+        <translation>&amp;View</translation>
+      </string>
+      <string>
+        <original>&amp;Tools</original>
+        <translation>&amp;Tools</translation>
+      </string>
+      <string>
+        <original>WUU website marked as not available, skipping version check</original>
+        <translation>WUU website marked as not available, skipping version check</translation>
+      </string>
+      <string>
+        <original>Online version of WUU: %(ver)s</original>
+        <translation>Tilgjengelig versjon av WUU: %(ver)s</translation>
+      </string>
+      <string>
+        <original>Version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</original>
+        <translation>Version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</translation>
+      </string>
+      <string>
+        <original>A new version is available!</original>
+        <translation>En ny versjon er tilgjengelig!</translation>
+      </string>
+      <string>
+        <original>Download Progress</original>
+        <translation>Nedlastningsfremdrift</translation>
+      </string>
+      <string>
+        <original>Update failed, check WUU.log for details</original>
+        <translation>Oppdatering feilet, sjekk WUU.log for detaljer</translation>
+      </string>
+      <string>
+        <original>WUU Update Unsuccessful</original>
+        <translation>WUU-oppdatering feilet</translation>
+      </string>
+      <string>
+        <original>Update successful, please restart WUU now!</original>
+        <translation>Oppdatering vellykket, vennligst start WUU på nytt nå!</translation>
+      </string>
+      <string>
+        <original>WUU Update Successful</original>
+        <translation>WUU-oppdatering vellykket</translation>
+      </string>
+      <string>
+        <original>Version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</original>
+        <translation>Version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</translation>
+      </string>
+      <string>
+        <original>Error: Could not check online version: %(dets)s</original>
+        <translation>Error: Could not check online version: %(dets)s</translation>
+      </string>
+      <string>
+        <original>WUU website marked as not available, skipping beta version check</original>
+        <translation>WUU website marked as not available, skipping beta version check</translation>
+      </string>
+      <string>
+        <original>Online beta version of WUU: %(ver)s</original>
+        <translation>Online beta version of WUU: %(ver)s</translation>
+      </string>
+      <string>
+        <original>Beta version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</original>
+        <translation>Beta version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</translation>
+      </string>
+      <string>
+        <original>A new BETA version is available!</original>
+        <translation>A new BETA version is available!</translation>
+      </string>
+      <string>
+        <original>WUU Beta Update Unsuccessful</original>
+        <translation>WUU Beta Update Unsuccessful</translation>
+      </string>
+      <string>
+        <original>WUU Beta Update Successful</original>
+        <translation>WUU Beta Update Successful</translation>
+      </string>
+      <string>
+        <original>Beta version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</original>
+        <translation>Beta version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</translation>
+      </string>
+      <string>
+        <original>Error: Could not check online beta version: %(dets)s</original>
+        <translation>Error: Could not check online beta version: %(dets)s</translation>
+      </string>
+      <string>
+        <original>WUU website marked as not available, skipping regexp check</original>
+        <translation>WUU website marked as not available, skipping regexp check</translation>
+      </string>
+      <string>
+        <original>Checking for new site regexps</original>
+        <translation>Ser etter nye side-regexps</translation>
+      </string>
+      <string>
+        <original>Could not download regexp version file - aborting (Reason: %(dets)s)</original>
+        <translation>Could not download regexp version file - aborting (Reason: %(dets)s)</translation>
+      </string>
+      <string>
+        <original>Downloaded new site regexps</original>
+        <translation>Lastet ned nye side-regexper</translation>
+      </string>
+      <string>
+        <original>Loading UI settings from %(sfile)s</original>
+        <translation>Loading UI settings from %(sfile)s</translation>
+      </string>
+      <string>
+        <original>Manage PTR Addons ?</original>
+        <translation>Manage PTR Addons ?</translation>
+      </string>
+      <string>
+        <original>Public Test Realm Addons</original>
+        <translation>Public Test Realm Addons</translation>
+      </string>
+      <string>
+        <original>Could not backup settings file to %(sfile)s.bak: %(dets)s</original>
+        <translation>Could not backup settings file to %(sfile)s.bak: %(dets)s</translation>
+      </string>
+      <string>
+        <original>Saving UI settings to %(sfile)s</original>
+        <translation>Saving UI settings to %(sfile)s</translation>
+      </string>
+      <string>
+        <original>Select the directory containing %s</original>
+        <translation>Select the directory containing %s</translation>
+      </string>
+      <string>
+        <original>No further info available (Addon missing, TOC missing or Child Addon)</original>
+        <translation>No further info available (Addon missing, TOC missing or Child Addon)</translation>
+      </string>
+      <string>
+        <original>Installing the Standalone Libraries, please wait...</original>
+        <translation>Installing the Standalone Libraries, please wait...</translation>
+      </string>
+      <string>
+        <original>Restoring the Standalone Libraries, please wait...</original>
+        <translation>Restoring the Standalone Libraries, please wait...</translation>
+      </string>
+      <string>
+        <original>Updating the Standalone Libraries, please wait...</original>
+        <translation>Updating the Standalone Libraries, please wait...</translation>
+      </string>
+      <string>
+        <original>No Addons selected to version check</original>
+        <translation>Ingen tillegg valgt for versjonssjekk</translation>
+      </string>
+      <string>
+        <original>Checking Online Version</original>
+        <translation>Sjekker online-versjon</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons queued for version check, please wait...</original>
+        <translation>%(num)d Addons queued for version check, please wait...</translation>
+      </string>
+      <string>
+        <original>No Addons selected to update</original>
+        <translation>Ingen tillegg valgt for oppdatering</translation>
+      </string>
+      <string>
+        <original>Updating selected Addons</original>
+        <translation>Oppdaterer valgte tillegg</translation>
+      </string>
+      <string>
+        <original>All selected Addons are queued for update, please wait...</original>
+        <translation>All selected Addons are queued for update, please wait...</translation>
+      </string>
+      <string>
+        <original>Checking all Addon versions</original>
+        <translation>Sjekker alle tilleggenes versjoner</translation>
+      </string>
+      <string>
+        <original>All Addons are queued for version check, please wait...</original>
+        <translation>All Addons are queued for version check, please wait...</translation>
+      </string>
+      <string>
+        <original>Updating all Addons with a newer online version</original>
+        <translation>Opddaterer alle tillegg som har en nyere versjon tilgjengelig</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons queued for update, please wait...</original>
+        <translation>%(num)d tillegg er lagt i kø for oppdatering, vennligst vent...</translation>
+      </string>
+      <string>
+        <original>No Addons to Update</original>
+        <translation>Ingen tillegg å oppdatere</translation>
+      </string>
+      <string>
+        <original>No Addons selected to have their site set to %(site)s</original>
+        <translation>No Addons selected to have their site set to %(site)s</translation>
+      </string>
+      <string>
+        <original>Related Addon</original>
+        <translation>Related Addon</translation>
+      </string>
+      <string>
+        <original>Enter the Related Addon's Name</original>
+        <translation>Enter the Related Addon's Name</translation>
+      </string>
+      <string>
+        <original>Setting all selected Addons to site %(site)s</original>
+        <translation>Setter alle valgte tillegg til side %(site)s</translation>
+      </string>
+      <string>
+        <original>All selected Addons set to site %(site)s - REMEMBER TO EDIT SITE IDs IF NECESSARY!</original>
+        <translation>All selected Addons set to site %(site)s - REMEMBER TO EDIT SITE IDs IF NECESSARY!</translation>
+      </string>
+      <string>
+        <original>Scanning Addon directory</original>
+        <translation>Skanner tilleggs-katalog</translation>
+      </string>
+      <string>
+        <original>%(num)d missing Addons queued for installation, please wait...</original>
+        <translation>%(num)d missing Addons queued for installation, please wait...</translation>
+      </string>
+      <string>
+        <original>Export to file</original>
+        <translation>Eksportér til fil</translation>
+      </string>
+      <string>
+        <original>Exported list to %(path)s</original>
+        <translation>Eksporterte listen til %(path)s</translation>
+      </string>
+      <string>
+        <original>Export to file cancelled</original>
+        <translation>Export to file cancelled</translation>
+      </string>
+      <string>
+        <original>No Addons selected to Export</original>
+        <translation>Ingen tillegg valgt for eksport</translation>
+      </string>
+      <string>
+        <original>Checking Addons for Export</original>
+        <translation>Checking Addons for Export</translation>
+      </string>
+      <string>
+        <original>Export %(num)d selected Addons to file</original>
+        <translation>Eksportér %(num)d valgte tillegg til fil</translation>
+      </string>
+      <string>
+        <original>Exported list of %(num)d selected Addons to %(path)s</original>
+        <translation>Exported list of %(num)d selected Addons to %(path)s</translation>
+      </string>
+      <string>
+        <original>Export of selected Addons to file cancelled</original>
+        <translation>Export of selected Addons to file cancelled</translation>
+      </string>
+      <string>
+        <original>No Addons selected to Delete</original>
+        <translation>Ingen tillegg valgt for sletting</translation>
+      </string>
+      <string>
+        <original>Checking Addons for Deletion</original>
+        <translation>Checking Addons for Deletion</translation>
+      </string>
+      <string>
+        <original> (and %(num)d related addon(s))</original>
+        <translation> (and %(num)d related addon(s))</translation>
+      </string>
+      <string>
+        <original>Delete %(num)d selected Addon(s)%(rtext)s?</original>
+        <translation>Delete %(num)d selected Addon(s)%(rtext)s?</translation>
+      </string>
+      <string>
+        <original>Are you sure?</original>
+        <translation>Er du sikker?</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons queued for deletion, please wait...</original>
+        <translation>%(num)d tillegg lagt i kø for sletting, vennligst vent...</translation>
+      </string>
+      <string>
+        <original>Removal of %(num)d Addon(s) cancelled</original>
+        <translation>Fjerning av %(num)d tillegg avbrutt</translation>
+      </string>
+      <string>
+        <original>No Addons selected to Restore</original>
+        <translation>Ingen tillegg valgt for gjenoppretting</translation>
+      </string>
+      <string>
+        <original>Checking Addons for Restoration</original>
+        <translation>Checking Addons for Restoration</translation>
+      </string>
+      <string>
+        <original>Restore %(num)d selected Addon(s)%(rtext)s?</original>
+        <translation>Gjenopprett %(num)d valgt(e) tillegg%(rtext)s?</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons queued for restoration, please wait...</original>
+        <translation>%(num)d Addons queued for restoration, please wait...</translation>
+      </string>
+      <string>
+        <original>Restore of %(num)d Addon(s) cancelled</original>
+        <translation>Gjenoppretting av %(num)d tillegg avbrutt</translation>
+      </string>
+      <string>
+        <original>Import from file</original>
+        <translation>Importér fra fil</translation>
+      </string>
+      <string>
+        <original>Should WUU download and install all Addons imported automatically? This SHOULD be done on an empty AddOns-directory!</original>
+        <translation>Should WUU download and install all Addons imported automatically? This SHOULD be done on an empty AddOns-directory!</translation>
+      </string>
+      <string>
+        <original>Install imported Addons?</original>
+        <translation>Installér importerte tillegg?</translation>
+      </string>
+      <string>
+        <original>File %(path)s imported and installed</original>
+        <translation>Fil %(path)s importert og installert</translation>
+      </string>
+      <string>
+        <original>File %(path)s imported, no Addons installed</original>
+        <translation>File %(path)s importert, ingen tillegg installert</translation>
+      </string>
+      <string>
+        <original>Enter Addon pack ID</original>
+        <translation>Enter Addon pack ID</translation>
+      </string>
+      <string>
+        <original>Import from Addon pack</original>
+        <translation>Import from Addon pack</translation>
+      </string>
+      <string>
+        <original>Addon pack %(packid)s imported and installed</original>
+        <translation>Tilleggspakke %(packid)s importert og installert</translation>
+      </string>
+      <string>
+        <original>Addon pack %(packid)s imported, no Addons installed</original>
+        <translation>Addon pack %(packid)s imported, no Addons installed</translation>
+      </string>
+      <string>
+        <original>Enter Addon URL</original>
+        <translation>Enter Addon URL</translation>
+      </string>
+      <string>
+        <original>Import from Addon URL</original>
+        <translation>Import from Addon URL</translation>
+      </string>
+      <string>
+        <original>Installing %(aurl)s, please wait...</original>
+        <translation>Installerer %(aurl)s, vennligst vent...</translation>
+      </string>
+      <string>
+        <original>Addon installed successfully!</original>
+        <translation>Tilleggsinstallasjonen var vellykket!</translation>
+      </string>
+      <string>
+        <original>Error installing %(aurl)s</original>
+        <translation>Feil under installasjon av %(aurl)s</translation>
+      </string>
+      <string>
+        <original>Import site settings from file</original>
+        <translation>Importér side-instillinger fra fil</translation>
+      </string>
+      <string>
+        <original>Loading WoWAce Addons</original>
+        <translation>Laster WoWAce-tillegg</translation>
+      </string>
+      <string>
+        <original>Nothing to Install</original>
+        <translation>Nothing to Install</translation>
+      </string>
+      <string>
+        <original>Error installing from WoWAce: %(dets)s</original>
+        <translation>Feil under installasjon fra WoWAce: %(dets)s</translation>
+      </string>
+      <string>
+        <original>Loading Cosmos Addons</original>
+        <translation>Laster Cosmos-tillegg</translation>
+      </string>
+      <string>
+        <original>Error installing from Cosmos: %(dets)s</original>
+        <translation>Feil under installasjon fra Cosmos: %(dets)s</translation>
+      </string>
+      <string>
+        <original>Resolving Addon dependencies</original>
+        <translation>Fikser tilleggs-avhengigheter</translation>
+      </string>
+      <string>
+        <original>No missing dependencies detected</original>
+        <translation>Ingen manglende nødvendige tillegg</translation>
+      </string>
+      <string>
+        <original>%(num)d unique dependencies are missing</original>
+        <translation>%(num)d unike avhengigheter mangler</translation>
+      </string>
+      <string>
+        <original>\n(%(num)d more...)</original>
+        <translation>\n(%(num)d til...)</translation>
+      </string>
+      <string>
+        <original>\nTry to fix missing dependencies with the master list?</original>
+        <translation>\nTry to fix missing dependencies with the master list?</translation>
+      </string>
+      <string>
+        <original>Fix missing dependencies?</original>
+        <translation>Fikse manglende nødvendige tillegg?</translation>
+      </string>
+      <string>
+        <original>%(num)d Addon dependencies queued for Installation, please wait...</original>
+        <translation>%(num)d Addon dependencies queued for Installation, please wait...</translation>
+      </string>
+      <string>
+        <original>Error resolving dependencies</original>
+        <translation>Error resolving dependencies</translation>
+      </string>
+      <string>
+        <original>Remove ALL Embedded Ace Libraries in ALL WoWAce Addons?</original>
+        <translation>Remove ALL Embedded Ace Libraries in ALL WoWAce Addons?</translation>
+      </string>
+      <string>
+        <original>Remove Embedded Libraries?</original>
+        <translation>Fjerne vedlagte bibliotek?</translation>
+      </string>
+      <string>
+        <original>Could not cache version numbers from WoWAce</original>
+        <translation>Klarte ikke hente versjonsnumre fra WoWAce</translation>
+      </string>
+      <string>
+        <original>Removing Embedded Ace Libraries</original>
+        <translation>Removing Embedded Ace Libraries</translation>
+      </string>
+      <string>
+        <original>ALL Embedded Ace Libraries removed from ALL WoWAce Addons</original>
+        <translation>ALL Embedded Ace Libraries removed from ALL WoWAce Addons</translation>
+      </string>
+      <string>
+        <original>Embedded Ace Libraries stats: %(fnum)d files and %(dnum)d folders removed</original>
+        <translation>Embedded Ace Libraries stats: %(fnum)d files and %(dnum)d folders removed</translation>
+      </string>
+      <string>
+        <original>Remove ALL missing library entries from ALL WoWAce Addons TOC files?</original>
+        <translation>Remove ALL missing library entries from ALL WoWAce Addons TOC files?</translation>
+      </string>
+      <string>
+        <original>Remove missing library entries?</original>
+        <translation>Fjerne manglende bibliotek fra TOC?</translation>
+      </string>
+      <string>
+        <original>ALL missing library entries removed from ALL WoWAce Addons TOC files</original>
+        <translation>ALL missing library entries removed from ALL WoWAce Addons TOC files</translation>
+      </string>
+      <string>
+        <original>Uploading Addons, please wait...</original>
+        <translation>Uploading Addons, please wait...</translation>
+      </string>
+      <string>
+        <original>Upload failed</original>
+        <translation>Opplastning feilet</translation>
+      </string>
+      <string>
+        <original>Checking [Unknown] Addons with the Online DB</original>
+        <translation>Sjekker [Unknown] (ukjente) tillegg mot database på nett</translation>
+      </string>
+      <string>
+        <original>%(num)d Addon settings updated</original>
+        <translation>%(num)d tilleggs-innstillinger oppdatert</translation>
+      </string>
+      <string>
+        <original>No Addons updated</original>
+        <translation>Ingen tillegg oppdatert</translation>
+      </string>
+      <string>
+        <original>Online DB check failed: %(dets)s</original>
+        <translation>Sjekk mot nettdatabase feilet: %(dets)s</translation>
+      </string>
+      <string>
+        <original>This will DELETE all files and folders in %(dir)s</original>
+        <translation>Dette vil SLETTE ALLE filer og mapper i %(dir)s</translation>
+      </string>
+      <string>
+        <original>Temp dir cleaned; %(fnum)d files and %(dnum)d folders removed</original>
+        <translation>Temp dir cleaned; %(fnum)d files and %(dnum)d folders removed</translation>
+      </string>
+      <string>
+        <original>You have some unsaved changes. Save now?</original>
+        <translation>Du har endringer som ikke er lagret. Lagre nå?</translation>
+      </string>
+      <string>
+        <original>Unsaved changes</original>
+        <translation>Endringer ikke lagret</translation>
+      </string>
+      <string>
+        <original>Saving UI Settings, please wait...</original>
+        <translation>Saving UI Settings, please wait...</translation>
+      </string>
+      <string>
+        <original>Cleaning Temp dir, please wait...</original>
+        <translation>Cleaning Temp dir, please wait...</translation>
+      </string>
+      <string>
+        <original>Stopping queue handler, please wait...</original>
+        <translation>Stopping queue handler, please wait...</translation>
+      </string>
+      <string>
+        <original>Edit Addon: %(addon)s</original>
+        <translation>Edit Addon: %(addon)s</translation>
+      </string>
+      <string>
+        <original>Addon Directory:</original>
+        <translation>Addon Directory:</translation>
+      </string>
+      <string>
+        <original>Friendly Name:</original>
+        <translation>Friendly Name:</translation>
+      </string>
+      <string>
+        <original>Source Site:</original>
+        <translation>Source Site:</translation>
+      </string>
+      <string>
+        <original>Site ID:</original>
+        <translation>Site ID:</translation>
+      </string>
+      <string>
+        <original>Install %(site)s Addons</original>
+        <translation>Install %(site)s Addons</translation>
+      </string>
+      <string>
+        <original>Name</original>
+        <translation>Name</translation>
+      </string>
+      <string>
+        <original>Ins?</original>
+        <translation>Ins?</translation>
+      </string>
+      <string>
+        <original>Note</original>
+        <translation>Note</translation>
+      </string>
+      <string>
+        <original>Toggle Install</original>
+        <translation>Velg for installasjon</translation>
+      </string>
+      <string>
+        <original>Close and Download</original>
+        <translation>Lukk og last ned</translation>
+      </string>
+      <string>
+        <original>Cancel</original>
+        <translation>Avbryt</translation>
+      </string>
+      <string>
+        <original>Enter a string to search for in the Name or Note</original>
+        <translation>Enter a string to search for in the Name or Note</translation>
+      </string>
+      <string>
+        <original>%(title)s - [%(cntt)d/%(cnti)d/%(cntf)d] (Total/Installed/Flagged)</original>
+        <translation>%(title)s - [%(cntt)d/%(cnti)d/%(cntf)d] (Total/Installed/Flagged)</translation>
+      </string>
+      <string>
+        <original>Install list cleaned</original>
+        <translation>Installasjonsliste tømt</translation>
+      </string>
+      <string>
+        <original>Download and install %(num)d Addons?</original>
+        <translation>Last ned og installér %(num)d tillegg?</translation>
+      </string>
+      <string>
+        <original>Close Install Addon(s)</original>
+        <translation>Lukk, installér tillegg</translation>
+      </string>
+      <string>
+        <original>%(num)d Addons queued for Installation, please wait...</original>
+        <translation>%(num)d Addons queued for Installation, please wait...</translation>
+      </string>
+      <string>
+        <original>Preferences</original>
+        <translation>Preferences</translation>
+      </string>
+      <string>
+        <original>10WoW directory</original>
+        <translation>10WoW directory</translation>
+      </string>
+      <string>
+        <original>Directory where WoW.exe resides</original>
+        <translation>Katalogen WoW.exe ligger i</translation>
+      </string>
+      <string>
+        <original>11Backup directory</original>
+        <translation>11Backup directory</translation>
+      </string>
+      <string>
+        <original>Directory where previous versions of Addons will be stored</original>
+        <translation>Directory where previous versions of Addons will be stored</translation>
+      </string>
+      <string>
+        <original>21Check WUU version</original>
+        <translation>21Check WUU version</translation>
+      </string>
+      <string>
+        <original>Check the web to see if a new version is available when WUU is started</original>
+        <translation>Check the web to see if a new version is available when WUU is started</translation>
+      </string>
+      <string>
+        <original>23Allow WUU beta version</original>
+        <translation>23Allow WUU beta version</translation>
+      </string>
+      <string>
+        <original>Check for newer beta versions first</original>
+        <translation>Sjekker etter betaversjon av WUU før vanlig versjon</translation>
+      </string>
+      <string>
+        <original>22Auto-update WUU</original>
+        <translation>22Auto-update WUU</translation>
+      </string>
+      <string>
+        <original>If self-updating doesn't work for you, uncheck this</original>
+        <translation>If self-updating doesn't work for you, uncheck this</translation>
+      </string>
+      <string>
+        <original>15Automatically load settings</original>
+        <translation>15Automatically load settings</translation>
+      </string>
+      <string>
+        <original>Automatically load Addon settings when WUU starts</original>
+        <translation>Laster innstillinger for tillegg når WUU starter</translation>
+      </string>
+      <string>
+        <original>16Delete before extract</original>
+        <translation>16Delete before extract</translation>
+      </string>
+      <string>
+        <original>Delete the Addon dir before extracting the new version - MIGHT BE DANGEROUS IF NEW VERSION IS CORRUPT</original>
+        <translation>Delete the Addon dir before extracting the new version - MIGHT BE DANGEROUS IF NEW VERSION IS CORRUPT</translation>
+      </string>
+      <string>
+        <original>31WoWAce: use no-ext addons</original>
+        <translation>31WoWAce: use no-ext addons</translation>
+      </string>
+      <string>
+        <original>WoWAce: Download the Addons without embedded libraries</original>
+        <translation>WoWAce: Download the Addons without embedded libraries</translation>
+      </string>
+      <string>
+        <original>41Use wuu.vagabonds.info data</original>
+        <translation>41Use wuu.vagabonds.info data</translation>
+      </string>
+      <string>
+        <original>Use wuu.vagabonds.info for lookups of data</original>
+        <translation>Bruk wuu.vagabonds.info for oppslag av data</translation>
+      </string>
+      <string>
+        <original>32Process Addon packages</original>
+        <translation>32Process Addon packages</translation>
+      </string>
+      <string>
+        <original>If the Addon contains a package file WUU will process it like WAU</original>
+        <translation>If the Addon contains a package file WUU will process it like WAU</translation>
+      </string>
+      <string>
+        <original>42Preserve newlines as-is</original>
+        <translation>42Preserve newlines as-is</translation>
+      </string>
+      <string>
+        <original>Enable this to turn off WUUs handling of newlines when unpacking archives</original>
+        <translation>Enable this to turn off WUUs handling of newlines when unpacking archives</translation>
+      </string>
+      <string>
+        <original>33Create/open changelog report</original>
+        <translation>33Create/open changelog report</translation>
+      </string>
+      <string>
+        <original>If this is enabled, WUU will open a report of all the changes in your web browser after updating (WoWAce only, for now)</original>
+        <translation>If this is enabled, WUU will open a report of all the changes in your web browser after updating (WoWAce only, for now)</translation>
+      </string>
+      <string>
+        <original>43Clean downloaded files on exit</original>
+        <translation>43Clean downloaded files on exit</translation>
+      </string>
+      <string>
+        <original>If enabled, the WUU temp directory will be deleted on exit (same effect as running the similar menu option)</original>
+        <translation>If enabled, the WUU temp directory will be deleted on exit (same effect as running the similar menu option)</translation>
+      </string>
+      <string>
+        <original>51Language code</original>
+        <translation>51Language code</translation>
+      </string>
+      <string>
+        <original>Enter language code for translation to use in WUU (e.g. 'en' for lang-en.xml)</original>
+        <translation>Enter language code for translation to use in WUU (e.g. 'en' for lang-en.xml)</translation>
+      </string>
+      <string>
+        <original>71Check for PTR Client</original>
+        <translation>71Check for PTR Client</translation>
+      </string>
+      <string>
+        <original>Check to see if the PTR Client is installed, will allow PTR Addons to be managed if set)</original>
+        <translation>Check to see if the PTR Client is installed, will allow PTR Addons to be managed if set)</translation>
+      </string>
+      <string>
+        <original>45Use Coral CDN</original>
+        <translation>45Use Coral CDN</translation>
+      </string>
+      <string>
+        <original>Uses the Coral Content Distribution Network to save on the sites' bandwidth</original>
+        <translation>Uses the Coral Content Distribution Network to save on the sites' bandwidth</translation>
+      </string>
+      <string>
+        <original>46Use threads</original>
+        <translation>46Use threads</translation>
+      </string>
+      <string>
+        <original>Uncheck this if threaded updating is slow</original>
+        <translation>Uncheck this if threaded updating is slow</translation>
+      </string>
+      <string>
+        <original>47Socket timeout</original>
+        <translation>47Socket timeout</translation>
+      </string>
+      <string>
+        <original>Set to number of seconds before timeout, or blank/negative number for no timeout</original>
+        <translation>Set to number of seconds before timeout, or blank/negative number for no timeout</translation>
+      </string>
+      <string>
+        <original>81Addon Installed Colour</original>
+        <translation>81Addon Installed Colour</translation>
+      </string>
+      <string>
+        <original>Choose the colour to indicate that an Addon is Installed</original>
+        <translation>Choose the colour to indicate that an Addon is Installed</translation>
+      </string>
+      <string>
+        <original>82Addon Missing Colour</original>
+        <translation>82Addon Missing Colour</translation>
+      </string>
+      <string>
+        <original>Choose the colour to indicate that an Addon is Missing</original>
+        <translation>Choose the colour to indicate that an Addon is Missing</translation>
+      </string>
+      <string>
+        <original>83Addon Pending Colour</original>
+        <translation>83Addon Pending Colour</translation>
+      </string>
+      <string>
+        <original>Choose the colour to indicate an that Addon has an Available Update</original>
+        <translation>Choose the colour to indicate an that Addon has an Available Update</translation>
+      </string>
+      <string>
+        <original>Log to file</original>
+        <translation>Logg til fil</translation>
+      </string>
+      <string>
+        <original>Save the event log to WUU.log</original>
+        <translation>Lagrer hendelsesloggen til WUU.log</translation>
+      </string>
+      <string>
+        <original>Curse: allow beta Addons</original>
+        <translation>Curse: tillat beta-tillegg</translation>
+      </string>
+      <string>
+        <original>CurseGaming: Allow WUU to download a beta version if newer</original>
+        <translation>CurseGaming: Allow WUU to download a beta version if newer</translation>
+      </string>
+      <string>
+        <original>Select your %(name)s</original>
+        <translation>Velg din %(name)s</translation>
+      </string>
+      <string>
+        <original>WoW UI Updater %(ver)s</original>
+        <translation>WoW UI Updater %(ver)s</translation>
+      </string>
+      <string>
+        <original>Can't find directory "%(idir)s" in WoW directory, creating it</original>
+        <translation>Can't find directory "%(idir)s" in WoW directory, creating it</translation>
+      </string>
+      <string>
+        <original>Can't find directory "%(adir)s" in %(idir)s directory, creating it</original>
+        <translation>Can't find directory "%(adir)s" in %(idir)s directory, creating it</translation>
+      </string>
+      <string>
+        <original>%(lname)s's Website Unavailable</original>
+        <translation>%(lname)s's nettside er utilgjengelig</translation>
+      </string>
+      <string>
+        <original>Converted %(addon)s's version.txt to %(verfile)s</original>
+        <translation>Converted %(addon)s's version.txt to %(verfile)s</translation>
+      </string>
+      <string>
+        <original>Update of %(lname)s needed, starting...</original>
+        <translation>Update of %(lname)s needed, starting...</translation>
+      </string>
+      <string>
+        <original>Updating %(lname)s from %(lver)s to %(over)s</original>
+        <translation>Oppdaterer %(lname)s fra %(lver)s til %(over)s</translation>
+      </string>
+      <string>
+        <original>%(lname)s is updated to %(lver)s</original>
+        <translation>%(lname)s er oppdatert til %(lver)s</translation>
+      </string>
+      <string>
+        <original>Could not open %(addon)s web page: %(purl)s, %(dets)s</original>
+        <translation>Could not open %(addon)s web page: %(purl)s, %(dets)s</translation>
+      </string>
+      <string>
+        <original>%(lname)s's Website Unavailable, please try later</original>
+        <translation>%(lname)s's Website Unavailable, please try later</translation>
+      </string>
+      <string>
+        <original>No download URL found for %(lname)s</original>
+        <translation>No download URL found for %(lname)s</translation>
+      </string>
+      <string>
+        <original>Download of %(lname)s failed, URL=%(url)s: %(dets)s</original>
+        <translation>Download of %(lname)s failed, URL=%(url)s: %(dets)s</translation>
+      </string>
+      <string>
+        <original>No Embedded Libraries</original>
+        <translation>Ingen vedlagte tillegg</translation>
+      </string>
+      <string>
+        <original>Process Addon package</original>
+        <translation>Process Addon package</translation>
+      </string>
+      <string>
+        <original>Could not find %(addon)s update date on page - is site ID correct?</original>
+        <translation>Could not find %(addon)s update date on page - is site ID correct?</translation>
+      </string>
+      <string>
+        <original>Can't get a readable date for %(addon)s out of the page: %(dets)s (%(vdata)s)</original>
+        <translation>Can't get a readable date for %(addon)s out of the page: %(dets)s (%(vdata)s)</translation>
+      </string>
+      <string>
+        <original>Can't get a readable version for %(addon)s out of the page: %(dets)s (%(vdata)s)</original>
+        <translation>Can't get a readable version for %(addon)s out of the page: %(dets)s (%(vdata)s)</translation>
+      </string>
+      <string>
+        <original>Could not find %(addon)s info on page - is site ID correct?</original>
+        <translation>Could not find %(addon)s info on page - is site ID correct?</translation>
+      </string>
+      <string>
+        <original>Could not find %(addon)s info in SVN - is site ID correct?</original>
+        <translation>Could not find %(addon)s info in SVN - is site ID correct?</translation>
+      </string>
+      <string>
+        <original>Exporting %(dlurl)s</original>
+        <translation>Exporting %(dlurl)s</translation>
+      </string>
+      <string>
+        <original>Exporting %(lname)s, please wait...</original>
+        <translation>Exporting %(lname)s, please wait...</translation>
+      </string>
+      <string>
+        <original>%(dlurl)s downloaded to %(ldir)s</original>
+        <translation>%(dlurl)s downloaded to %(ldir)s</translation>
+      </string>
+      <string>
+        <original>Export of %(lname)s complete!</original>
+        <translation>Export of %(lname)s complete!</translation>
+      </string>
+      <string>
+        <original>Export from SVN failed</original>
+        <translation>Export from SVN failed</translation>
+      </string>
+      <string>
+        <original>&gt;&gt;&gt;&gt; Please refer to %(wuuki)sOtherSites for Instructions &lt;&lt;&lt;&lt;</original>
+        <translation>&gt;&gt;&gt;&gt; Please refer to %(wuuki)sOtherSites for Instructions &lt;&lt;&lt;&lt;</translation>
+      </string>
+      <string>
+        <original>Addon Information Page</original>
+        <translation>Addon Information Page</translation>
+      </string>
+      <string>
+        <original>Addon Extension regexp</original>
+        <translation>Addon Extension regexp</translation>
+      </string>
+      <string>
+        <original>Addon Version regexp</original>
+        <translation>Addon Version regexp</translation>
+      </string>
+      <string>
+        <original>Version info is a Date</original>
+        <translation>Version info is a Date</translation>
+      </string>
+      <string>
+        <original>Use Last Version string</original>
+        <translation>Use Last Version string</translation>
+      </string>
+      <string>
+        <original>Download Name Expression</original>
+        <translation>Download Name Expression</translation>
+      </string>
+      <string>
+        <original>Date Format</original>
+        <translation>Date Format</translation>
+      </string>
+      <string>
+        <original>Could not find %(addon)s extension on page - is the Regular Expression correct?</original>
+        <translation>Could not find %(addon)s extension on page - is the Regular Expression correct?</translation>
+      </string>
+      <string>
+        <original>%(lname)s Extension: %(extn)s</original>
+        <translation>%(lname)s Extension: %(extn)s</translation>
+      </string>
+      <string>
+        <original>Addon Download URL is: %(dlurl)s</original>
+        <translation>Addon Download URL is: %(dlurl)s</translation>
+      </string>
+      <string>
+        <original>Could not find %(addon)s version info on page - is the Regular Expression correct?</original>
+        <translation>Could not find %(addon)s version info on page - is the Regular Expression correct?</translation>
+      </string>
+      <string>
+        <original>%(lname)s Version: %(ver)s</original>
+        <translation>%(lname)s Version: %(ver)s</translation>
+      </string>
+      <string>
+        <original>Parent Addon</original>
+        <translation>Parent Addon</translation>
+      </string>
+      <string>
+        <original>Unknown Addon site/type: %(atype)s</original>
+        <translation>Unknown Addon site/type: %(atype)s</translation>
+      </string>
+      <string>
+        <original>Refreshing Addons</original>
+        <translation>Refreshing Addons</translation>
+      </string>
+      <string>
+        <original>Addons refreshed</original>
+        <translation>Addons refreshed</translation>
+      </string>
+      <string>
+        <original>Loading settings from %(filename)s</original>
+        <translation>Loading settings from %(filename)s</translation>
+      </string>
+      <string>
+        <original>Could not find file version setting</original>
+        <translation>Could not find file version setting</translation>
+      </string>
+      <string>
+        <original>Inputfile is newer: version %(ver)s - please check %(site)s for a newer version of WUU</original>
+        <translation>Inputfile is newer: version %(ver)s - please check %(site)s for a newer version of WUU</translation>
+      </string>
+      <string>
+        <original>Loading Addon settings</original>
+        <translation>Laster tilleggsinnstillinger</translation>
+      </string>
+      <string>
+        <original>WUU is blocked by ui.worldofwar.net as of 2007-05-12, support for %(addon)s is disabled</original>
+        <translation>WUU is blocked by ui.worldofwar.net as of 2007-05-12, support for %(addon)s is disabled</translation>
+      </string>
+      <string>
+        <original>Loaded settings, %(num)d Addons found</original>
+        <translation>Lastet innstillinger, %(num)d tillegg funnet</translation>
+      </string>
+      <string>
+        <original>Done loading settings</original>
+        <translation>Ferdig med å laste inn innstillinger</translation>
+      </string>
+      <string>
+        <original>Getting WoWAce addons info, please wait...</original>
+        <translation>Getting WoWAce addons info, please wait...</translation>
+      </string>
+      <string>
+        <original>Loading WoWAce addon settings</original>
+        <translation>Laster tilleggsdefinisjoner fra WoWAce</translation>
+      </string>
+      <string>
+        <original>Loaded WoWAce Addons List, %(num)d Addons found</original>
+        <translation>Lastet WoWAce, %(num)d tillegg funnet</translation>
+      </string>
+      <string>
+        <original>Done loading WoWAce addon list</original>
+        <translation>Ferdig med å laste tilleggsliste fra WoWAce</translation>
+      </string>
+      <string>
+        <original>Updating version cache</original>
+        <translation>Oppdaterer versjonsliste</translation>
+      </string>
+      <string>
+        <original>Opening %(calist)s</original>
+        <translation>åpner %(calist)s</translation>
+      </string>
+      <string>
+        <original>Loading Addon definitions from Cosmos</original>
+        <translation>Laster tilleggsdefinisjoner fra Cosmos</translation>
+      </string>
+      <string>
+        <original>Loaded Cosmos, %(num)d Addons found</original>
+        <translation>Lastet Cosmos, %(num)d tillegg funnet</translation>
+      </string>
+      <string>
+        <original>Done loading Cosmos addon list</original>
+        <translation>Done loading Cosmos addon list</translation>
+      </string>
+      <string>
+        <original>Merging settings</original>
+        <translation>Slår sammen innstillinger</translation>
+      </string>
+      <string>
+        <original>Merging Addons</original>
+        <translation>Slår sammen tillegg</translation>
+      </string>
+      <string>
+        <original>Merged %(fname)s (%(atype)s)</original>
+        <translation>Slo sammen %(fname)s (%(atype)s)</translation>
+      </string>
+      <string>
+        <original>Set %(fname)s to [Ignore]</original>
+        <translation>Satte %(fname)s til [Ignore](r)</translation>
+      </string>
+      <string>
+        <original>Merged settings, %(num)d Addons updated</original>
+        <translation>Slo sammen innstillinger, %(num)d tillegg oppdatert</translation>
+      </string>
+      <string>
+        <original>Done merging settings</original>
+        <translation>Ferdig med å slå sammen innstillinger</translation>
+      </string>
+      <string>
+        <original>Saving settings</original>
+        <translation>Lagrer innstillinger</translation>
+      </string>
+      <string>
+        <original>Saving Addon settings</original>
+        <translation>Lagret tilleggsinnstillinger</translation>
+      </string>
+      <string>
+        <original>Saved settings</original>
+        <translation>Lagret innstillinger</translation>
+      </string>
+      <string>
+        <original>Done saving settings</original>
+        <translation>Done saving settings</translation>
+      </string>
+      <string>
+        <original>Scanning Addons directory</original>
+        <translation>Skanner tilleggskatalog</translation>
+      </string>
+      <string>
+        <original>Changing Addon %(addon)s to [Ignore] due to .svn folder</original>
+        <translation>Changing Addon %(addon)s to [Ignore] due to .svn folder</translation>
+      </string>
+      <string>
+        <original>New Addon %(addon)s has .svn, and is set to [Ignore]</original>
+        <translation>New Addon %(addon)s has .svn, and is set to [Ignore]</translation>
+      </string>
+      <string>
+        <original>New Addon: %(addon)s</original>
+        <translation>Nytt tillegg: %(addon)s</translation>
+      </string>
+      <string>
+        <original>Done scanning Addons directory</original>
+        <translation>Done scanning Addons directory</translation>
+      </string>
+      <string>
+        <original>Scanning Addons list</original>
+        <translation>Skanner tilleggsliste</translation>
+      </string>
+      <string>
+        <original>Addon %(addon)s has been flagged as missing</original>
+        <translation>Tillegg %(addon)s ble flagget som manglende</translation>
+      </string>
+      <string>
+        <original>Scanned Addon directory, %(snum)d Addons found (%(new)d new, %(ins)d installed fresh, %(miss)d missing, %(ign)d ignored, %(dum)d dummy, %(del)d deleted, %(chld)s children)</original>
+        <translation>Scanned Addon directory, %(snum)d Addons found (%(new)d new, %(ins)d installed fresh, %(miss)d missing, %(ign)d ignored, %(dum)d dummy, %(del)d deleted, %(chld)s children)</translation>
+      </string>
+      <string>
+        <original>Done scanning Addons list</original>
+        <translation>Done scanning Addons list</translation>
+      </string>
+      <string>
+        <original>Purged %(num)d missing Addons from the list</original>
+        <translation>Purged %(num)d missing Addons from the list</translation>
+      </string>
+      <string>
+        <original>%(maddon)s set as main addon</original>
+        <translation>%(maddon)s satt som hovedtillegg</translation>
+      </string>
+      <string>
+        <original>%(rel)s set to [Related]</original>
+        <translation>%(rel)s satt til [Related] (relatert)</translation>
+      </string>
+      <string>
+        <original>Thank you! %(upd)s of your Addons were added to the database</original>
+        <translation>Thank you! %(upd)s of your Addons were added to the database</translation>
+      </string>
+      <string>
+        <original>This Addon pack contains %(pcnt)s Addons and has the following code: %(phash)s</original>
+        <translation>This Addon pack contains %(pcnt)s Addons and has the following code: %(phash)s</translation>
+      </string>
+      <string>
+        <original>Unexpected message from web server: %(page)s</original>
+        <translation>Uventet respons fra server: %(page)s</translation>
+      </string>
+      <string>
+        <original>WUU website is unavailable at the moment - request aborted</original>
+        <translation>WUU website is unavailable at the moment - request aborted</translation>
+      </string>
+      <string>
+        <original>WUU Application directory is under SVN control, ignoring update</original>
+        <translation>WUU Application directory is under SVN control, ignoring update</translation>
+      </string>
+      <string>
+        <original>WUU Source File(s) download failed: %(dlf)s, %(dets)s</original>
+        <translation>WUU Source File(s) download failed: %(dlf)s, %(dets)s</translation>
+      </string>
+      <string>
+        <original>%(addon)s removed successfully</original>
+        <translation>%(addon)s fjernet</translation>
+      </string>
+      <string>
+        <original>Backup of %(addon)s done</original>
+        <translation>Sikkerhetskopi av %(addon)s fullfØrt</translation>
+      </string>
+      <string>
+        <original>Backup of %(addon)s failed</original>
+        <translation>Sikkerhetskopi av %(addon)s feilet</translation>
+      </string>
+      <string>
+        <original>No backup of %(addon)s exists</original>
+        <translation>Sikkerhetskopi av %(addon)s finnes ikke</translation>
+      </string>
+      <string>
+        <original>Downloading %(sname)s</original>
+        <translation>Laster ned %(sname)s</translation>
+      </string>
+      <string>
+        <original>Download of %(sname)s complete!</original>
+        <translation>Nedlastning av %(sname)s ferdig!</translation>
+      </string>
+      <string>
+        <original>%(url)s downloaded to %(lfile)s</original>
+        <translation>%(url)s lastet ned til %(lfile)s</translation>
+      </string>
+      <string>
+        <original>We failed to reach %(url)s, Reason: %(dets)s</original>
+        <translation>Fikk ikke tak i %(url)s, grunn gitt: %(dets)s</translation>
+      </string>
+      <string>
+        <original>%(url)s couldn\'t fulfill the request, Error code: %(dets)s</original>
+        <translation>%(url)s couldn\'t fulfill the request, Error code: %(dets)s</translation>
+      </string>
+      <string>
+        <original>Ignoring path %(filename)s</original>
+        <translation>Ignorerer katalogen %(filename)s</translation>
+      </string>
+      <string>
+        <original>Skipping forbidden file %(filename)s</original>
+        <translation>Hopper over forbudt fil %(filename)s</translation>
+      </string>
+      <string>
+        <original>Handling Addon package</original>
+        <translation>Tolker tilleggspakke</translation>
+      </string>
+      <string>
+        <original>Could not process Addon package, extracting normally</original>
+        <translation>Could not process Addon package, extracting normally</translation>
+      </string>
+      <string>
+        <original>%(stot)d of %(tot)d Addon(s) cleaned successfully</original>
+        <translation>%(stot)d av %(tot)d tillegg ryddet</translation>
+      </string>
+      <string>
+        <original>Unpacking ZIP file</original>
+        <translation>Pakker ut ZIP-fil</translation>
+      </string>
+      <string>
+        <original>Could not extract file %(filename)s</original>
+        <translation>Kunne ikke pakke ut fra %(filename)s</translation>
+      </string>
+      <string>
+        <original>Unpacking RAR file</original>
+        <translation>Pakker ut RAR-fil</translation>
+      </string>
+      <string>
+        <original>Skipping probable directory %(filename)s</original>
+        <translation>Hopper over antatt katalog %(filename)s</translation>
+      </string>
+      <string>
+        <original>Successfully extracted %(file)s to %(dir)s</original>
+        <translation>Pakket ut %(file)s til %(dir)s</translation>
+      </string>
+      <string>
+        <original>Copying from SVN Export dir</original>
+        <translation>Kopierer fra SVN-eksport-katalog</translation>
+      </string>
+      <string>
+        <original>Successfully Extracted %(filename)s to %(dirname)s</original>
+        <translation>Pakket ut %(filename)s til %(dirname)s</translation>
+      </string>
+      <string>
+        <original>Don't know where to place file %(filename)s</original>
+        <translation>Klarer ikke plassere %(filename)s</translation>
+      </string>
+      <string>
+        <original>%(filename)s is really a RAR file - renaming</original>
+        <translation>%(filename)s er egentlig en RAR-fil - gir nytt navn</translation>
+      </string>
+      <string>
+        <original>Removing missing library entries</original>
+        <translation>Fjerner manglende bibliotek-innlegg</translation>
+      </string>
+      <string>
+        <original>Missing library entries stats: %(fnum)d files and %(lnum)d lines updated</original>
+        <translation>Missing library entries stats: %(fnum)d files and %(lnum)d lines updated</translation>
+      </string>
+    </languagedef>
+  </wurmlanguages>
+</wurm>

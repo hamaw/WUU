@@ -1,0 +1,28 @@
+curse_dlversion	<td><a\shref="/downloads/wow-addons/details/(.+?)/download/(\d+)/.*?<td\sclass="tr">(\d{2})/(\d{2})/(\d{4})</td>
+curse_dlversion2	"date"\sstyle=".+?;">(\d{1,2})/(\d{1,2})/(\d{4})</td>.+?href="/downloads/wow-addons/details/(.+?)/download/(\d+)\.aspx"
+curse_realdl	<a\shref="(http://media\d{0,2}.+?)"\sclass="button\sbutton-pop">
+curse_realdl2	<a\sclass="button\sbutton-pop"\shref="/downloads/download\.aspx\?pi=(\d+).+fi=(\d+)">
+wowi_version	Date:.+?"smallfont">(\d{2})-(\d{2})-(\d{4})\s(\d{2}):(\d{2})\s(\w{2})
+auct_version	<a\shref="\?dl=(%s/([0-9a-zA-Z\.-]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
+auct_version2	href="\?dl=Release/(%s-([0-9a-zA-Z\.]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
+gath_version	<a\shref="\?dl=(%s/([0-9a-zA-Z\._-]+?\.zip))">.+?(\d{4})-(\d{2})-(\d{2})
+wowace_version	Last Update:.*\n.*data-epoch="(\d+)">
+wowace_dlversion	<a\shref="\/projects\/%s\/files\/(.*)\/"><span>Download</span></a>
+wowace_version2	\/(.+)\/\1-r(.+)\.zip\">
+cosmos_mversion	t=addons&f=([a-zA-Z0-9]+?\.zip)".+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday))<br./>
+cosmos_version	t=addons&f=(%s\.zip)".+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday))<br./>
+cosmos_mlist	t=addons&f=([a-zA-Z0-9]+?)\.zip".+?smallfont">(.*?)</div>.+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday))<br./>
+cosmos_mversion2	t=addons&f=([a-zA-Z0-9]+?\.zip)".+?"alt1">(\d+)</td>.+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday)|(Today))<br./>
+cosmos_version2	t=addons&f=(%s\.zip)".+?"alt1">(\d+)</td>.+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday)|(Today))<br./>
+cosmos_mlist2	t=addons&f=([a-zA-Z0-9]+?)\.zip".+?smallfont">(.*?)</div>.+?"alt1">(\d+)</td>.+?(?:(\d{2})-(\d{2})-(\d{4})|(Yesterday)|(Today))<br./>
+ctmod_version	href="(/download/(\d+)/)"\stitle="(?:\w|\s)+">(%s)</a>\s+?\(v(\d+)\.(\d+)\)
+ctmod_mlist	href="(/download/(\d+)/)"\stitle="(?:\w|\s)+">(\w+?)</a>\s+?\(v(\d+)\.(\d+)\)
+capnbry_version	<a\shref="(downloads/(%s[0-9\.-]+?.zip)).+?v(\d{2})
+googlecode_version	href="http://%s.googlecode.com/files/(%s(?:%%20)?(?:Alpha|Beta)?(?:%%20|\.)?([-_0-9a-z\.]+?).(zip|rar))
+acesvn_version	Last Changed Rev:\s(\d+)
+acesvn_export	Exported\srevision\s(\w+)\.
+svn_version	Last Changed Rev:\s(\d+)
+svn_export	Exported\srevision\s(\w+)\.
+dbm_version	href="http://www.deadlybossmods.com/download.php\?id=(\d*)">(\d+).(\d+)\s(\w+)
+dbm_version2	<tr><td><a\shref="./download.php\?id=(\d*)">(.+?)</a></td><td>(\d+)\.(\d+)-r(\d+)
+wowui_version	/>Updated <b>(\d{2})/(\d{2})/(\d{4})</b>

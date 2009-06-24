@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<wurm>
+	<wurmlanguages>
+		<languagedef code="nl" name="Dutch" version="381">
+			<string>
+				<original>(FATAL ERROR) You need to install wxPython (http://www.wxpython.org/) 2.6.3.3 or higher (2.8 is preferred) to run WUU\n</original>
+				<translation>(FATAL ERROR) U moet wxPython (http://www.wxpython.org/) 2.6.3.3 or higher (2.8 is preferred) installeren om WUU\n uit te voeren</translation>
+			</string>
+			<string>
+				<original>Dummy Addon</original>
+				<translation>Test Addon</translation>
+			</string>
+			<string>
+				<original>Ignore this Addon</original>
+				<translation>Negeer deze Addon</translation>
+			</string>
+			<string>
+				<original>Addon won't be updated anymore</original>
+				<translation>Addon wordt niet meer geupdate</translation>
+			</string>
+			<string>
+				<original>Addon is related to/comes with another Addon</original>
+				<translation>Addon is gerelateerd/of komt met een andere Addon</translation>
+			</string>
+			<string>
+				<original>Site ID is Addon this one comes with</original>
+				<translation>Site ID is de Addon, dit komt met</translation>
+			</string>
+			<string>
+				<original>Addon source unknown</original>
+				<translation>Addon bron onbekend</translation>
+			</string>
+			<string>
+				<original>Site ID is directory name</original>
+				<translation>Site ID is de locatie naam</translation>
+			</string>
+			<string>
+				<original>Site ID is numeric + Addon name from site. e.g.: "5001-Minimalist"</original>
+				<translation>Site ID is numeriek + Addon naam van site. bv.: "5001-Minimalist"</translation>
+			</string>
+			<string>
+				<original>Site ID is the part of the Addon URL after /details/, e.g.: "2003" or "sw-stats"</original>
+				<translation>Site ID is het deel van de Addon URL na /details/, bv.: "2003" of "sw-stats"</translation>
+			</string>
+			<string>
+				<original>Site ID is the part after f= in the download URL</original>
+				<translation>Site ID is is het deel na f= in de download URL</translation>
+			</string>
+			<string>
+				<original>Site ID is developer name. e.g.:"tekkub-wow"</original>
+				<translation>Site ID is de ontwikkelaar. bv.:"tekkub-wow"</translation>
+			</string>
+			<string>
+				<original>Site ID is [branches|tags|trunk] followed by Addonname optionally followed by developer/version etc,\n e.g.: --&gt; branches/!!Warmup/ckknight\n --&gt; tags/lern2count/1.12/lern2count_plugins/lern2count_bongos\n --&gt; trunk/Zookeeper</original>
+				<translation>Site ID is [branches|tags|trunk] gevolgd door de Addonnaam, eventueel gevolgd door developer/versie enz,\n bv.: --&gt; branches/!!Warmup/ckknight\n --&gt; tags/lern2count/1.12/lern2count_plugins/lern2count_bongos\n --&gt; trunk/Zookeeper</translation>
+			</string>
+			<string>
+				<original>Please refer to %(wuuki)sOtherSites for Instructions</original>
+				<translation>Ga naar %(wuuki)sOtherSites voor Instructies</translation>
+			</string>
+			<string>
+				<original>Addon List</original>
+				<translation>Addon Lijst</translation>
+			</string>
+			<string>
+				<original>Event Log</original>
+				<translation>Gebeurtenissen log</translation>
+			</string>
+			<string>
+				<original>Autoloading settings</original>
+				<translation>Auto-laden van opties</translation>
+			</string>
+			<string>
+				<original>---- READY ----</original>
+				<translation>---- KLAAR ----</translation>
+			</string>
+			<string>
+				<original>--- READY ---</original>
+				<translation>--- KLAAR ---</translation>
+			</string>
+			<string>
+				<original>WUU website marked as not available, skipping regexp check</original>
+				<translation>WUU website is niet beschikbaar, negeer regexp check</translation>
+			</string>
+			<string>
+				<original>Checking for new site regexps</original>
+				<translation>Controleren op nieuwe site regexps</translation>
+			</string>
+			<string>
+				<original>Could not download regexp version file - aborting (Reason: %(dets)s)</original>
+				<translation>Kan regexp versie bestand niet downloaden - afbreken (Reason: %(dets)s)</translation>
+			</string>
+			<string>
+				<original>Downloaded new site regexps</original>
+				<translation>Nieuwe site regexp gedowloaded</translation>
+			</string>
+			<string>
+				<original>WUU website marked as not available, skipping version check</original>
+				<translation>WUU website gemarkeerd als niet beschikbaar, negeer versie controle</translation>
+			</string>
+			<string>
+				<original>Online version of WUU: %(ver)s</original>
+				<translation>Online versie van WUU: %(ver)s</translation>
+			</string>
+			<string>
+				<original>Version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</original>
+				<translation>Versie %(ver)s van WUU is beschikbaar van %(site)s\nDownload en installeer automatisch\n(updates zijn RSA/Blowfish-gesigneerd)?</translation>
+			</string>
+			<string>
+				<original>A new version is available!</original>
+				<translation>Nieuwe versie beschikbaar!</translation>
+			</string>
+			<string>
+				<original>Download Progress</original>
+				<translation>Download Vooruitgang</translation>
+			</string>
+			<string>
+				<original>Update failed, check WUU.log for details</original>
+				<translation>Update mislukt, WUU.log voor details</translation>
+			</string>
+			<string>
+				<original>WUU Update Unsuccessful</original>
+				<translation>WUU Update niet gelukt</translation>
+			</string>
+			<string>
+				<original>Update successful, please restart WUU now!</original>
+				<translation>Update succesvol, herstart WUU nu!</translation>
+			</string>
+			<string>
+				<original>WUU Update Successful</original>
+				<translation>WUU Succesvol Bijgewerkt</translation>
+			</string>
+			<string>
+				<original>Version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</original>
+				<translation>Versie %(ver)s van WUU is beschikbaar van %(site)s\nWilt u de pagina openen in een nieuw browservenster?</translation>
+			</string>
+			<string>
+				<original>Error: Could not check online version: %(dets)s</original>
+				<translation>Fout: Kan de online versie niet controleren: %(dets)s</translation>
+			</string>
+			<string>
+				<original>WUU website marked as not available, skipping beta version check</original>
+				<translation>WUU website gemarkeerd als niet beschikbaar, negeer beta-versie controleren</translation>
+			</string>
+			<string>
+				<original>Online beta version of WUU: %(ver)s</original>
+				<translation>Online beta versie van WUU: %(ver)s</translation>
+			</string>
+			<string>
+				<original>Beta version %(ver)s of WUU is available from %(site)s\nDownload and install automatically\n(updates are RSA/Blowfish-signed)?</original>
+				<translation>Beta versie %(ver)s van WUU is beschikbaar van %(site)s\nDownload en installeer automatisch\n(updates zijn RSA/Blowfish-gesigneerd)?</translation>
+			</string>
+			<string>
+				<original>A new BETA version is available!</original>
+				<translation>Een nieuwe BETA versie is beschikbaar!</translation>
+			</string>
+			<string>
+				<original>WUU Beta Update Unsuccessful</original>
+				<translation>WUU Beta Update niet gelukt</translation>
+			</string>
+			<string>
+				<original>WUU Beta Update Successful</original>
+				<translation>WUU Beta Succesvol Bijgewerkt</translation>
+			</string>
+			<string>
+				<original>Beta version %(ver)s of WUU is available from %(site)s\nDo you want to open the page in a new browser window?</original>
+				<translation>Beta versie %(ver)s van WUU is beschikbaar van %(site)s\nWilt u de pagina openen in een nieuw browservenster?</translation>
+			</string>
+			<string>
+				<original>Error: Could not check online beta version: %(dets)s</original>
+				<translation>Fout: Kan online beta versie niet controleren : %(dets)s</translation>
+			</string>
+			<string>
+				<original>Loading UI settings from %(sfile)s</original>
+				<translation>UI instellingen aan het laden van %(sfile)s</translation>
+			</string>
+			<string>
+				<original>Saving UI settings to %(sfile)s</original>
+				<translation>UI-instellingen opslaan in %(sfile)s</translation>
+			</string>
+			<string>
+				<original>Select your WoW directory</original>
+				<translation>Selecteer je WoW locatie</translation>
+			</string>
+			<string>
+				<original>%(addon)s version checked</original>
+				<translation>%(addon)s versie gecontroleerd</translation>
+			</string>
+			<string>
+				<original>%(addon)s deleted successfully</original>
+				<translation>%(addon)s succesvol verwijderd</translation>
+			</string>
+			<string>
+				<original>%(addon)s restored successfully</original>
+				<translation>%(addon)s succesvol hersteld</translation>
+			</string>
+			<string>
+				<original>%(addon)s updated successfully</original>
+				<translation>%(addon)s succesvol bijgewerkt</translation>
+			</string>
+			<string>
+				<original>%(addon)s installed successfully</original>
+				<translation>%(addon)s succesvol geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>All Addons version checked</original>
+				<translation>All Addons versies gecontroleerd</translation>
+			</string>
+			<string>
+				<original>All Addons installed</original>
+				<translation>Alle Addons geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>All Addons updated</original>
+				<translation>Alle Addons bijgewerkt</translation>
+			</string>
+			<string>
+				<original>only if update was needed</original>
+				<translation>Alleen als update nodig was</translation>
+			</string>
+			<string>
+				<original>All Addons %(cmd)sd</original>
+				<translation>Alle Addons %(cmd)sd</translation>
+			</string>
+			<string>
+				<original>No Addons selected to version check</original>
+				<translation>Geen Addons geselecteerd voor versie controle</translation>
+			</string>
+			<string>
+				<original>Checking Online Version</original>
+				<translation>Controleren van online versie</translation>
+			</string>
+			<string>
+				<original>%(num)d Addons queued for version check, please wait...</original>
+				<translation>%(num)d Addons in wachtrij geplaatst voor versie controlere, even geduld...</translation>
+			</string>
+			<string>
+				<original>No Addons selected to update</original>
+				<translation>Geen Addons geselecteerd om bij te werken</translation>
+			</string>
+			<string>
+				<original>Updating selected Addons</original>
+				<translation>Updating selected Addons</translation>
+			</string>
+			<string>
+				<original>All selected Addons are queued for update, please wait...</original>
+				<translation>Alle geselecteerde Addons zijn in wachtrij voor de update, even geduld ...</translation>
+			</string>
+			<string>
+				<original>Checking all Addon versions</original>
+				<translation>Controle van alle Addon versies</translation>
+			</string>
+			<string>
+				<original>All Addons are queued for version check, please wait...</original>
+				<translation>Alle Addons zijn de wachtrij geplaatst voor versie controle, even geduld</translation>
+			</string>
+			<string>
+				<original>Updating all Addons with a newer online version</original>
+				<translation>Bijwerken van alle addons met een nieuwere online versie</translation>
+			</string>
+			<string>
+				<original>%(num)d Addons queued for update, please wait...</original>
+				<translation>%(num)d Addons in wachtrij voor de update, even geduld...</translation>
+			</string>
+			<string>
+				<original>No Addons to Update</original>
+				<translation>Geen addons bij te werken</translation>
+			</string>
+			<string>
+				<original>No Addons selected to have their site set to %(site)s</original>
+				<translation>Geen addons geselecteerd om hun site te zetten naar %(site)s</translation>
+			</string>
+			<string>
+				<original>Setting all selected Addons to site %(site)s</original>
+				<translation>Instellen van alle geselecteerde Addons naar %(site)s</translation>
+			</string>
+			<string>
+				<original>All selected Addons set to site %(site)s - REMEMBER TO EDIT SITE IDs IF NECESSARY!</original>
+				<translation>Alle geselecteerde Addons ingesteld naar  %(site)s - Vergeet niet de site-id's bij te werken indien nodig!</translation>
+			</string>
+			<string>
+				<original>Scanning Addon directory</original>
+				<translation>Scannen van Addon lijst</translation>
+			</string>
+			<string>
+				<original>Export to file</original>
+				<translation>Exporteer naar bestand</translation>
+			</string>
+			<string>
+				<original>Exported list to %(path)s</original>
+				<translation>Lijst geëxporteerd naar %(path)s</translation>
+			</string>
+			<string>
+				<original>No Addons selected to Export</original>
+				<translation>Geen Addons geselecteerd om te Exporteren</translation>
+			</string>
+			<string>
+				<original>Export %(num)d selected Addons to file</original>
+				<translation>Exporteer %(num)d geselecteerde Addons naar bestand</translation>
+			</string>
+			<string>
+				<original>Exported list of %(num)d selected Addons to %(path)s</original>
+				<translation>Lijst geëxporteerd van %(num)d geselecteerde Addons naar %(path)s</translation>
+			</string>
+			<string>
+				<original>No Addons selected to Delete</original>
+				<translation>Geen Addons geselecteerd om te Verwijderen</translation>
+			</string>
+			<string>
+				<original>Deleting selected Addons</original>
+				<translation>Verwijderen van geselecteerde Addons</translation>
+			</string>
+			<string>
+				<original> (and %d related addon(s))" % (relatedAdded))</original>
+				<translation> (and %d related addon(s))" % (relatedAdded))</translation>
+			</string>
+			<string>
+				<original>Are you sure?</original>
+				<translation>Bent U zeker?</translation>
+			</string>
+			<string>
+				<original>%(num)d Addons queued for deletion, please wait...</original>
+				<translation>%(num)d Addons in wachtrij voor verwijdering, even geduld... </translation>
+			</string>
+			<string>
+				<original>Removal of %(num)d Addon(s) cancelled</original>
+				<translation>Verwijdering van %(num)d Addon(s) geannuleerd</translation>
+			</string>
+			<string>
+				<original>No Addons selected to Restore</original>
+				<translation>Geen Addons geselecteerd om te Herstellen</translation>
+			</string>
+			<string>
+				<original>Restoring selected Addons</original>
+				<translation>Herstellen van geselecteerde Addons</translation>
+			</string>
+			<string>
+				<original>Restore %(num)d selected Addon(s)%(rtext)s?</original>
+				<translation>Herstel %(num)d geselecteerde Addon(s)%(rtext)s?</translation>
+			</string>
+			<string>
+				<original>%(num)d Addons queued for restoration, please wait...</original>
+				<translation>%(num)d Addons in wachtrij voor herstellen, even geduld...</translation>
+			</string>
+			<string>
+				<original>Restore of %(num)d Addon(s) cancelled</original>
+				<translation>Herstellen van %(num)d Addon(s) geannuleerd</translation>
+			</string>
+			<string>
+				<original>Import from file</original>
+				<translation>Importeren van bestand</translation>
+			</string>
+			<string>
+				<original>Should WUU download and install all Addons imported automatically? This SHOULD be done on an empty AddOns-directory!</original>
+				<translation>Moet WUU alle geïmporteerde addons automatisch downloaden en installeren? Dit MOET gedaan worden bij een lege Addon-lijst!</translation>
+			</string>
+			<string>
+				<original>Install imported Addons?</original>
+				<translation>Installeer geïmporteerde Addons?</translation>
+			</string>
+			<string>
+				<original>File %(path)s imported and installed</original>
+				<translation>Bestand %(path)s geïmporteerd en geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>File %(path)s imported, no Addons installed</original>
+				<translation>Bestand %(path)s geïmporteerd, geen Addons geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>Addon pack %(packid)s imported and installed</original>
+				<translation>Addon pakket %(packid)s geïmporteerd en geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>Addon pakket %(packid)s geïmporteerd, geen Addons geïnstalleerd</original>
+				<translation>Addon pack %(packid)s imported, no Addons installed</translation>
+			</string>
+			<string>
+				<original>Installing %(aurl)s, please wait...</original>
+				<translation>Installeren van %(aurl)s, even geduld...</translation>
+			</string>
+			<string>
+				<original>Addon installed successfully!</original>
+				<translation>Addon succesvol geïnstaleerd!</translation>
+			</string>
+			<string>
+				<original>Error installing %(aurl)s</original>
+				<translation>Fout bij installeren van %(aurl)s</translation>
+			</string>
+			<string>
+			<original>Import site settings from file</original>
+				<translation>Import site-instellingen uit bestand</translation>
+			</string>
+			<string>
+				<original>Loading WoWAce Addons</original>
+				<translation>Laden van WoWAce Addons</translation>
+			</string>
+			<string>
+				<original>Error installing from WoWAce: %(dets)s</original>
+				<translation>Fout bij installeren van WoWAce: %(dets)s</translation>
+			</string>
+			<string>
+				<original>Loading Cosmos Addons</original>
+				<translation>Laden van Cosmos Addons</translation>
+			</string>
+			<string>
+				<original>Error installing from Cosmos: %(dets)s</original>
+				<translation>Fout bij installeren van Cosmos: %(dets)s</translation>
+			</string>
+			<string>
+				<original>Resolving Addon dependencies</original>
+				<translation>Oplossen van Addon dependencies</translation>
+			</string>
+			<string>
+				<original>No missing dependencies detected</original>
+				<translation>Geen missende dependencies gedetecteed</translation>
+			</string>
+			<string>
+				<original>%(num)d unique dependencies are missing</original>
+				<translation>%(num)d unieke dependencies ontbreken</translation>
+			</string>
+			<string>
+				<original>\n(%(num)d more...)</original>
+				<translation>\n(%(num)d meer...)</translation>
+			</string>
+			<string>
+				<original>\nTry to fix missing dependencies with the master list?</original>
+				<translation>\nProbeer de missende dependencies op te lossen met de master lijst?</translation>
+			</string>
+			<string>
+				<original>Fix missing dependencies?</original>
+				<translation>Herstel missende dependencies?</translation>
+			</string>
+			<string>
+				<original>%(num)d Addon dependencies queued for Installation, please wait...</original>
+				<translation>%(num)d Addon dependencies in wachtrij voor Installatie, even geduld...</translation>
+			</string>
+			<string>
+				<original>Remove ALL Embedded Libraries in ALL WoWAce Addons?</original>
+				<translation>Verwijder ALLE ingesloten Bibliotheken in ALLE WoWAce Addons?</translation>
+			</string>
+			<string>
+				<original>Remove Embedded Libraries?</original>
+				<translation>Verwijder Ingesloten Bibliotheken?</translation>
+			</string>
+			<string>
+				<original>Removing Embedded Libraries</original>
+				<translation>Verwijderen van Ingesloten Bibliotheken</translation>
+			</string>
+			<string>
+				<original>ALL Embedded Libraries removed from ALL WoWAce Addons</original>
+				<translation>ALLE Ingesloten Bibliotheken verwijderd van ALLE WoWAce Addons</translation>
+			</string>
+			<string>
+				<original>Remove ALL missing library entries from ALL WoWAce Addons TOC files?</original>
+				<translation>Verwijder ALLE ontbrekende bibliotheek entries van de TOC bestanden van ALLE WoWAce Addons?</translation>
+			</string>
+			<string>
+				<original>Remove missing library entries?</original>
+				<translation>Verwijder ontbrekende bibliotheek entries?</translation>
+			</string>
+			<string>
+				<original>ALL missing library entries removed from ALL WoWAce Addons TOC files</original>
+				<translation>ALLE ontbrekende bibliotheek entries verwijderd van de TOC bestanden van ALLE WoWAce Addons</translation>
+			</string>
+			<string>
+				<original>Upload failed</original>
+				<translation>Upload mislukt</translation>
+			</string>
+			<string>
+				<original>Checking [Unknown] Addons with the Online DB</original>
+				<translation>Controle van [Onbekende] Addons met de Online DB</translation>
+			</string>
+			<string>
+				<original>%(num)d Addon settings updated</original>
+				<translation>%(num)d Addon instellingen bijgewerkt</translation>
+			</string>
+			<string>
+				<original>No Addons updated</original>
+				<translation>Geen Addons Bijgewerkt</translation>
+			</string>
+			<string>
+				<original>Online DB check failed: %(dets)s</original>
+				<translation>Online DB controle mislukt: %(dets)s</translation>
+			</string>
+			<string>
+				<original>This will DELETE all files and folders in %(dir)s</original>
+				<translation>Dit zal alle bestanden en mappen VERWIJDEREN in %(dir)s</translation>
+			</string>
+			<string>
+				<original>Temp dir cleaned; %(fnum)d files and %(dnum)d folders removed</original>
+				<translation>Temp dir opgeschoond; %(fnum)d bestanden en %(dnum)d mappen verwijderd</translation>
+			</string>
+			<string>
+				<original>You have some unsaved changes. Save now?</original>
+				<translation>U heeft een aantal wijzigingen niet opgeslagen. Nu opslaan?</translation>
+			</string>
+			<string>
+				<original>Unsaved changes</original>
+				<translation>Niet opgeslagen wijzigingen</translation>
+			</string>
+			<string>
+				<original>Saving UI Settings - please wait</original>
+				<translation>UI-Instellingen Opslaan - even geduld</translation>
+			</string>
+			<string>
+				<original>Cleaning Temp dir - please wait</original>
+				<translation>Opschonen van Temp dir - even geduld</translation>
+			</string>
+			<string>
+				<original>Toggle Install</original>
+				<translation>Installatie Afsluiten</translation>
+			</string>
+			<string>
+				<original>Close and Download</original>
+				<translation>Sluit en Download</translation>
+			</string>
+			<string>
+				<original>Cancel</original>
+				<translation>Annuleer</translation>
+			</string>
+			<string>
+				<original>Install list cleaned</original>
+				<translation>Installatielijst opgeschoond</translation>
+			</string>
+			<string>
+				<original>Download and install %(num)d Addons?</original>
+				<translation>Download en installeer %(num)d Addons?</translation>
+			</string>
+			<string>
+				<original>Close Install Addon(s)</original>
+				<translation>Sluit Installatie Addon(s)</translation>
+			</string>
+			<string>
+				<original>%(num)d Addons queued for Installation, please wait...</original>
+				<translation>%(num)d Addons in wachtrij voor Installatie, even geduld...</translation>
+			</string>
+			<string>
+				<original>WoW directory</original>
+				<translation>WoW directory</translation>
+			</string>
+			<string>
+				<original>Directory where WoW.exe resides</original>
+				<translation>Directory waar WoW.exe instaat</translation>
+			</string>
+			<string>
+				<original>Backup directory</original>
+				<translation>Backup directory</translation>
+			</string>
+			<string>
+				<original>Directory where previous versions of Addons will be stored</original>
+				<translation>Directory waar vorige versies van Addons worden bewaard</translation>
+			</string>
+			<string>
+				<original>Check WUU version</original>
+				<translation>Controleer WUU versie</translation>
+			</string>
+			<string>
+				<original>Check the web to see if a new version is available when WUU is started</original>
+				<translation>Controleer of er een nieuwe versie beschikbaar, wanneer WUU is gestart</translation>
+			</string>
+			<string>
+				<original>Allow WUU beta version</original>
+				<translation>WUU beta versie toestaan</translation>
+			</string>
+			<string>
+				<original>Check for newer beta versions first</original>
+				<translation>Controleer eerst voor een nieuwere beta versie</translation>
+			</string>
+			<string>
+				<original>Auto-update WUU</original>
+				<translation>Auto-update WUU</translation>
+			</string>
+			<string>
+				<original>If self-updating doesn't work for you, uncheck this</original>
+				<translation>Als zelf updaten niet werkt voor u, vink dit niet aan</translation>
+			</string>
+			<string>
+				<original>Automatically load settings</original>
+				<translation>Laad instellingen automatisch</translation>
+			</string>
+			<string>
+				<original>Automatically load Addon settings when WUU starts</original>
+				<translation>Laad automatisch Addon instellingen als WUU start</translation>
+			</string>
+			<string>
+				<original>Delete before extract</original>
+				<translation>Verwijder voor uitpakken</translation>
+			</string>
+			<string>
+				<original>Delete the Addon dir before extracting the new version - MIGHT BE DANGEROUS IF NEW VERSION IS CORRUPT</original>
+				<translation>Verwijder de Addon directory voordat u de nieuwe versie uitpakt - DIT KAN GEVAARLIJK ZIJN ALS DE NIEUWE VERSIE CORRUPT IS</translation>
+			</string>
+			<string>
+				<original>WoWAce: use no-ext addons</original>
+				<translation>WoWAce: gebruik no-ext addons</translation>
+			</string>
+			<string>
+				<original>WoWAce: Download the Addons without embedded libraries</original>
+				<translation>WoWAce: Download de Addons zonder ingesloten bibliotheek</translation>
+			</string>
+			<string>
+				<original>Use wuu.vagabonds.info data</original>
+				<translation>Gebruik data van wuu.vagabonds.info</translation>
+			</string>
+			<string>
+				<original>Use wuu.vagabonds.info for lookups of data</original>
+				<translation>Gebruik data van wuu.vagabonds.info voor het opzoeken</translation>
+			</string>
+			<string>
+				<original>Process Addon packages</original>
+				<translation>Process Addon pakketten</translation>
+			</string>
+			<string>
+				<original>If the Addon contains a package file WUU will process it &#135; l&#136; WAU</original>
+				<translation>Als de Addon een pakketbestand bevat zal WUU het behandelen &#135; l&#136; WAU</translation>
+			</string>
+			<string>
+				<original>Preserve newlines as-is</original>
+				<translation>Behoud newlines as-is</translation>
+			</string>
+			<string>
+				<original>Enable this to turn off WUUs handling of newlines when unpacking archives</original>
+				<translation>Schakel dit in om WUUs behandeling van newlines bij het uitpakken van archiefbestanden uit te zetten</translation>
+			</string>
+			<string>
+				<original>Create/open changelog report</original>
+				<translation>Maak/open changelog verslag</translation>
+			</string>
+			<string>
+				<original>If this is enabled, WUU will open a report of all the changes in your web browser after updating (WoWAce only, for now)</original>
+				<translation>Als dit is aangezet, zal WUU een verslag openen van alle veranderingen in u webbrowser na het bijwerken (WoWAce alleen, nu nog)</translation>
+			</string>
+			<string>
+				<original>Clean downloaded files on exit</original>
+				<translation>Opschonen van gedowloade bestanden bij afsluiten</translation>
+			</string>
+			<string>
+				<original>If enabled, the WUU temp directory will be deleted on exit (same effect as running the similar menu option)</original>
+				<translation>Als dit ingeschakeld is, zal de WUU temp map wordt verwijderd bij het afsluiten (hetzelfde effect aanzetten bij een vergelijkbare menu optie)</translation>
+			</string>
+			<string>
+				<original>Language code</original>
+				<translation>Taalcode</translation>
+			</string>
+			<string>
+				<original>Enter language code for translation to use in WUU (e.g. 'en' for lang-en.xml)</original>
+				<translation>Enter de taalcode voor de vertaling voor te gebruiken in WUU (bv. 'en' for lang-en.xml)</translation>
+			</string>
+			<string>
+				<original>Log to file</original>
+				<translation>Log naar bestand</translation>
+			</string>
+			<string>
+				<original>Save the event log to WUU.log</original>
+				<translation>Sla het gebeurtenissen log op in WUU.log</translation>
+			</string>
+			<string>
+				<original>Curse: allow beta Addons</original>
+				<translation>Curse: Sta beta Addons toe</translation>
+			</string>
+			<string>
+				<original>CurseGaming: Allow WUU to download a beta version if newer</original>
+				<translation>CurseGaming: Sta WUU een nieuwere beta versie te downloaden</translation>
+			</string>
+			<string>
+				<original>Select your %(name)s</original>
+				<translation>Selecteer u %(name)s</translation>
+			</string>
+			<string>
+				<original>Can't find directory "%(idir)s" in WoW directory, creating it</original>
+				<translation>Kan geen directory "%(idir)s" in de WoW directory vinden, aan het maken</translation>
+			</string>
+			<string>
+				<original>Can't find directory "%(adir)s" in %(idir)s directory, creating it</original>
+				<translation>Kan geen directory "%(adir)s" in %(idir)s directory vinden, aan het maken</translation>
+			</string>
+			<string>
+				<original>%(lname)s's Website Unavailable</original>
+				<translation>%(lname)s's Website Niet Beschikbaar</translation>
+			</string>
+			<string>
+				<original>Updating %(lname)s from %(lver)s to %(over)s</original>
+				<translation>%(lname)s van %(lver)s naar %(over)s aan het bijwerken</translation>
+			</string>
+			<string>
+				<original>%(lname)s is updated to %(lver)s</original>
+				<translation>%(lname)s is bijgewerkt naar %(lver)s</translation>
+			</string>
+			<string>
+				<original>No download URL found</original>
+				<translation>Geen download URL gevonden</translation>
+			</string>
+			<string>
+				<original>Download of %(url)s failed: %(dets)s</original>
+				<translation>Download van %(url)s mislukt: %(dets)s</translation>
+			</string>
+			<string>
+				<original>No Embedded Libraries</original>
+				<translation>Geen Ingesloten Bibliotheken</translation>
+			</string>
+			<string>
+				<original>Could not cache version numbers from WoWAce</original>
+				<translation>Kon geen versie nummers van WoWAce opslaan </translation>
+			</string>
+			<string>
+				<original>%(lname)s unable to get Online Version</original>
+				<translation>%(lname)s niet in staat om Online Versie te verkrijgen</translation>
+			</string>
+			<string>
+				<original>%(burl)s unavailable, please try later</original>
+				<translation>%(burl)s is niet beschikbaar, probeer later opnieuw</translation>
+			</string>
+			<string>
+				<original>Download beta version if newer </original>
+				<translation>Download een beta versie als het recenter is </translation>
+			</string>
+			<string>
+				<original>Could not open %(addon)s page: %(dets)s</original>
+				<translation>Kon %(addon)s pagina niet openen: %(dets)s</translation>
+			</string>
+			<string>
+				<original>Could not find %(addon)s update date on page - is site ID correct?</original>
+				<translation>Kon %(addon)s update datum niet vinden op de pagina - is de site ID juist?</translation>
+			</string>
+			<string>
+				<original>Error, Could not open %(addon)s page %(url)s: %(dets)s</original>
+				<translation>Fout, Kon %(addon)s pagina %(url)s niet openen: %(dets)s</translation>
+			</string>
+			<string>
+				<original>Can't get a readable date for %(addon)s out of the page: %(dets)s (%(vdata)s)</original>
+				<translation>Kan geen leesbare datum van de pagina van %(addon)s verkrijgen: %(dets)s (%(vdata)s)</translation>
+			</string>
+			<string>
+				<original>Can't get a readable version for %(addon)s out of the page: %(dets)s (%(vdata)s)</original>
+				<translation>Kan geen leesbare versie van de pagina van %(addon)s verkrijgen: %(dets)s (%(vdata)s)</translation>
+			</string>
+			<string>
+				<original>Could not find %(addon)s info on page - is site ID correct?</original>
+				<translation>Kan %(addon)s info niet vinden op de pagina - is de site ID juist?</translation>
+			</string>
+			<string>
+				<original>Could not find %(addon)s info in SVN - is site ID correct?</original>
+				<translation>Kon %(addon)s info in de SVN niet vinden - is de site ID juist?</translation>
+			</string>
+			<string>
+				<original>Exporting %(dlurl)s</original>
+				<translation>Exporteren van %(dlurl)s</translation>
+			</string>
+			<string>
+				<original>Export from SVN failed</original>
+				<translation>Export van SVN mislukt</translation>
+			</string>
+			<string>
+				<original>%(dlurl)s downloaded to %(ldir)s</original>
+				<translation>%(dlurl)s gedownload naar %(ldir)s</translation>
+			</string>
+			<string>
+				<original>Addon Information Page</original>
+				<translation>Addon Informatie Pagina</translation>
+			</string>
+			<string>
+				<original>Addon Extension regexp</original>
+				<translation>Addon Extensie regexp</translation>
+			</string>
+			<string>
+				<original>Addon Version regexp</original>
+				<translation>Addon Versie regexp</translation>
+			</string>
+			<string>
+				<original>Version info is a Date</original>
+				<translation>Versie info is een Datum</translation>
+			</string>
+			<string>
+				<original>Use Last Version string</original>
+				<translation>Gebruik Laatste versie string</translation>
+			</string>
+			<string>
+				<original>Download Name Expression</original>
+				<translation>Download Name Expression</translation>
+			</string>
+			<string>
+				<original>Date Format</original>
+				<translation>Datum Formaat</translation>
+			</string>
+			<string>
+				<original>Could not open %(addon)s web page: %(purl)s, %(dets)s</original>
+				<translation>Kon %(addon)s web pagina niet openen: %(purl)s, %(dets)s</translation>
+			</string>
+			<string>
+				<original>Site Unavailable, please try later</original>
+				<translation>Site niet beschikbaar, probeer later opnieuw</translation>
+			</string>
+			<string>
+				<original>Could not find %(addon)s extension on page - is the Regular Expression correct?</original>
+				<translation>Kon %(addon)s extensie op de pagina niet vinden - is de Gewone Uitdrukking juist?</translation>
+			</string>
+			<string>
+				<original>%(lname)s Extension: %(extn)s</original>
+				<translation>%(lname)s Extensie: %(extn)s</translation>
+			</string>
+			<string>
+				<original>Addon Download URL is: %(dlurl)s</original>
+				<translation>Addon Download URL is: %(dlurl)s</translation>
+			</string>
+			<string>
+				<original>Could not find %(addon)s version info on page - is the Regular Expression correct?</original>
+				<translation>Kon %(addon)s versie info op de pagina niet vinden - is de Gewone Uitdrukking juist?</translation>
+			</string>
+			<string>
+				<original>%(lname)s Version: %(ver)s</original>
+				<translation>%(lname)s Versie: %(ver)s</translation>
+			</string>
+			<string>
+				<original>Parent Addon</original>
+				<translation>Hoofd Addon</translation>
+			</string>
+			<string>
+				<original>Unknown Addon site/type: %(atype)s</original>
+				<translation>Onbekende Addon site/type: %(atype)s</translation>
+			</string>
+			<string>
+				<original>Refreshing Addons</original>
+				<translation>Verversen van Addonlijst</translation>
+			</string>
+			<string>
+				<original>Addons refreshed</original>
+				<translation>Addonlijst verversd</translation>
+			</string>
+			<string>
+				<original>Loading settings from %(filename)s</original>
+				<translation>Laden van instellingen uit %(filename)s</translation>
+			</string>
+			<string>
+				<original>Could not find file version setting</original>
+				<translation>Kon de bestandsversie instelling niet vinden</translation>
+			</string>
+			<string>
+				<original>Inputfile is newer: version %(ver)s - please check %(site)s for a newer version of WUU</original>
+				<translation>Inputbestand is nieuwer: versie %(ver)s - Controleer %(site)s voor een nieuwere versie van WUU</translation>
+			</string>
+			<string>
+				<original>Loading Addon settings</original>
+				<translation>Laden van Addons instellingen</translation>
+			</string>
+			<string>
+			<original>WUU is blocked by ui.worldofwar.net as of 2007-05-12, support for %(addon)s is disabled</original>
+			<translation>WUU is geblokkeerd door ui.worldofwar.net sinds 2007-05-12, ondersteuning voor %(addon)s is uitgeschakeld</translation>
+			</string>
+			<string>
+				<original>Loaded settings, %(num)d Addons found</original>
+				<translation>Instellingen geladen, %(num)d Addons gevonden</translation>
+			</string>
+			<string>
+				<original>Done loading settings</original>
+				<translation>Klaar met instellingen te laden</translation>
+			</string>
+			<string>
+				<original>Loading WoWAce addon settings</original>
+				<translation>Laden van WoWAce addon instellingen</translation>
+			</string>
+			<string>
+				<original>Loaded WoWAce Addons List, %(num)d Addons found</original>
+				<translation>WoWAce Addonlijst geladen, %(num)d Addons gevonden</translation>
+			</string>
+			<string>
+				<original>Done loading WoWAce addon list</original>
+				<translation>Klaar met laden van de WoWAce addonlijst</translation>
+			</string>
+			<string>
+				<original>Updating version cache</original>
+				<translation>Bijwerken van versie cache</translation>
+			</string>
+			<string>
+				<original>Opening %(calist)s</original>
+				<translation>Openen van %(calist)s</translation>
+			</string>
+			<string>
+				<original>Loading Addon definitions from Cosmos</original>
+				<translation>Laden van Addon definities van Cosmos</translation>
+			</string>
+			<string>
+				<original>Loaded Cosmos, %(num)d Addons found</original>
+				<translation>Cosmos geladen, %(num)d Addons gevonden</translation>
+			</string>
+			<string>
+				<original>Merging settings</original>
+				<translation>Instellingen fuseren</translation>
+			</string>
+			<string>
+				<original>Merging Addons</original>
+				<translation>Addons fuseren</translation>
+			</string>
+			<string>
+				<original>Merged %(fname)s (%(atype)s)</original>
+				<translation>%(fname)s (%(atype)s) Gefuseerd</translation>
+			</string>
+			<string>
+				<original>Set %(fname)s to [Ignore]</original>
+				<translation>Zet %(fname)s to [Negeer]</translation>
+			</string>
+			<string>
+				<original>Merged settings, %(num)d Addons updated</original>
+				<translation>instellingen gefuseerd, %(num)d Addons bijgewerkt</translation>
+			</string>
+			<string>
+				<original>Done merging settings</original>
+				<translation>Klaar met fuseren van instellingen</translation>
+			</string>
+			<string>
+				<original>Saving settings</original>
+				<translation>Instellingen opslaan</translation>
+			</string>
+			<string>
+				<original>Saving Addon settings</original>
+				<translation>Addon instellingen opslaan</translation>
+			</string>
+			<string>
+				<original>Saved settings</original>
+				<translation>Opgeslagen instellingen</translation>
+			</string>
+			<string>
+				<original>Scanning Addons directory</original>
+				<translation>Addon directory aan het scannen</translation>
+			</string>
+			<string>
+				<original>Changing Addon %(addon)s to [Ignore] due to .svn folder</original>
+				<translation>Veranderen van Addon %(addon)s naar [Negeer] te wijten aan .svn map</translation>
+			</string>
+			<string>
+				<original>New Addon %(addon)s has .svn, and is set to [Ignore]</original>
+				<translation>Nieuwe Addon %(addon)s heeft een .svn, en is gezet naar [Negeer]</translation>
+			</string>
+			<string>
+				<original>New Addon: %(addon)s</original>
+				<translation>Nieuwe Addon: %(addon)s</translation>
+			</string>
+			<string>
+				<original>Scanning Addons list</original>
+				<translation>Scanning Addons list</translation>
+			</string>
+			<string>
+				<original>Missing Addon %(addon)s installed</original>
+				<translation>Ontbrekende Addon %(addon)s geïnstalleerd</translation>
+			</string>
+			<string>
+				<original>Addon %(addon)s has been flagged as missing</original>
+				<translation>Addon %(addon)s is aangevinkt als ontbrekend</translation>
+			</string>
+			<string>
+				<original>Scanned Addon directory, %(snum)d Addons found (%(new)d new, %(ins)d installed fresh, %(miss)d missing, %(ign)d ignored, %(dum)d dummy)</original>
+				<translation>Addon directory gescanned, %(snum)d Addons gevonden (%(new)d nieuw, %(ins)d vers geïnstalleerd, %(miss)d ontbreken, %(ign)d genegeerd, %(dum)d dummy)</translation>
+			</string>
+			<string>
+				<original>%(maddon)s set as main addon</original>
+				<translation>%(maddon)s is hoofd addon gemaakt</translation>
+			</string>
+			<string>
+				<original>%(rel)s set to [Related]</original>
+				<translation>%(rel)s set to [Gerelateerd]</translation>
+			</string>
+			<string>
+				<original>Thank you! %(upd)s of your Addons were added to the database</original>
+				<translation>Dank u! %(upd)s van U addons werden toegevoegd bij de Database</translation>
+			</string>
+			<string>
+				<original>This Addon pack contains %(pcnt)s Addons and has the following code: %(phash)s</original>
+				<translation>Dit Addon pakket bevat %(pcnt)s Addons en heeft de volgende code: %(phash)s</translation>
+			</string>
+			<string>
+				<original>ERROR response from web server: %(fields)s</original>
+				<translation>FOUT antwoord van de webserver: %(fields)s</translation>
+			</string>
+			<string>
+				<original>Unexpected message from web server: %(page)s</original>
+				<translation>Onverwacht antwoord van de webserver: %(page)s</translation>
+			</string>
+			<string>
+				<original>WUU website is unavailable at the moment - request aborted</original>
+				<translation>De WUU website is niet beschikbaar op dit moment - verzoek afgebroken</translation>
+			</string>
+			<string>
+				<original>WUU Application directory is under SVN control, ignoring update</original>
+				<translation>WUU Programma directory is onder SVN controle, negeren van update</translation>
+			</string>
+			<string>
+				<original>WUU Source File(s) download failed: %(dlf)s, %(dets)s</original>
+				<translation>Download van WUU Bron Bestanden(n) mislukt: %(dlf)s, %(dets)s</translation>
+			</string>
+			<string>
+				<original>Ignoring path %(filename)s</original>
+				<translation>Negeren van pad %(filename)s</translation>
+			</string>
+			<string>
+				<original>Skipping forbidden file %(filename)s</original>
+				<translation>Overslaan van verboden bestand %(filename)s</translation>
+			</string>
+			<string>
+				<original>Handling Addon package</original>
+				<translation>Behandeling Addon pakket</translation>
+			</string>
+			<string>
+				<original>Could not process Addon package, extracting normally</original>
+				<translation>Kon het Addon pakket niet verwerken, normaal uitpakken</translation>
+			</string>
+			<string>
+				<original>%(stot)d of %(tot)d Addon(s) cleaned successfully</original>
+				<translation>%(stot)d van %(tot)d Addon(s) succesvol opgeschoond</translation>
+			</string>
+			<string>
+				<original>Unpacking ZIP file</original>
+				<translation>Uitpakken van ZIP bestand</translation>
+			</string>
+			<string>
+				<original>Could not extract file %(filename)s</original>
+				<translation>Kon %(filename)s niet uitpakken</translation>
+			</string>
+			<string>
+				<original>Unpacking RAR file</original>
+				<translation>Uitpakken van RAR bestand</translation>
+			</string>
+			<string>
+				<original>Skipping probable directory %(filename)s</original>
+				<translation>Skipping probable directory %(filename)s</translation>
+			</string>
+			<string>
+				<original>Successfully extracted %(file)s to %(dir)s</original>
+				<translation>%(file)s naar %(dir)s succesvol uitgepakt</translation>
+			</string>
+			<string>
+				<original>Copying from SVN Export dir</original>
+				<translation>Kopiëren van SVN Export dir </translation>
+			</string>
+			<string>
+				<original>Successfully Extracted %(filename)s to %(dirname)s</original>
+				<translation>%(filename)s naar %(dirname)s succesvol uitgepakt</translation>
+			</string>
+			<string>
+				<original>Don't know where to place file %(filename)s</original>
+				<translation>Weet niet waar %(filename)s te plaatsen</translation>
+			</string>
+			<string>
+				<original>%(filename)s is really a RAR file - renaming</original>
+				<translation>%(filename)s is echt een RAR bestand - hernoemen</translation>
+			</string>
+			<string>
+				<original>Removing missing library entries</original>
+				<translation>Verwijderen van ontbrekende bibliotheek verwijzingen</translation>
+			</string>
+			<string>
+				<original>%(addon)s removed successfully</original>
+				<translation>%(addon)s succesvol verwijderd</translation>
+			</string>
+			<string>
+				<original>Backup of %(addon)s done</original>
+				<translation>Backup van %(addon)s gedaan</translation>
+			</string>
+			<string>
+				<original>Backup of %(addon)s failed</original>
+				<translation>Backup van %(addon)s mislukt</translation>
+			</string>
+			<string>
+				<original>No backup of %(addon)s exists</original>
+				<translation>Er bestaat geen backup van %(addon)s</translation>
+			</string>
+			<string>
+				<original>Downloading %(sname)s</original>
+				<translation>%(sname)s aan het downloaden</translation>
+			</string>
+			<string>
+				<original>Download of %(sname)s complete!</original>
+				<translation>Download van %(sname)s compleet!</translation>
+			</string>
+			<string>
+				<original>%(url)s downloaded to %(lfile)s</original>
+				<translation>%(url)s gedownload naar %(lfile)s</translation>
+			</string>
+			<string>
+				<original>We failed to reach %(url)s, Reason: %(dets)s</original>
+				<translation>We konden %(url)s niet bereiken, Reason: %(dets)s</translation>
+			</string>
+			<string>
+				<original>%(url)s couldn\'t fulfill the request, Error code: %(dets)s</original>
+				<translation>%(url)s kon het verzoek niet vervullen, Fout code: %(dets)s</translation>
+			</string>
+		</languagedef>
+	</wurmlanguages>
+</wurm>
