@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# $Id: WurmCommon.py 650 2009-05-07 12:10:38Z jonhogg $
+# $Id: WurmCommon.py 663 2009-06-01 18:43:01Z jonhogg $
 
 # Copyright (c) 2006-2009 The WUU Development Team
 #
@@ -107,7 +107,7 @@ directories = {"wow":"", "addons":"", "backup":"", "temp":"", "unpack":""}
 globalsettings = {} # Global settings for Wurm (so options may be set from the UI)
 siteregexps    = {} # Regexps used by the addon site classes
 
-listchanged    = False # Is set to True if the addon list was changed indirectly (that is, when the UI should give a "Do you want to save?"-popup when quitting)
+listchanged    = {} # Entries for each list are set to True if the addon list was changed indirectly (that is, when the UI should give a "Do you want to save?"-popup when quitting)
 
 # define working dictionaries
 addons          = {}
@@ -182,6 +182,9 @@ class AddonList(dict):
         """"""
         tracer.debug("AddonList - __init__")
         
+        # store object's id 
+        self._id = id(self)
+        
         dict.__init__(self)
         self._fname  = 0
         self._lname  = 1
@@ -209,7 +212,7 @@ class AddonList(dict):
         self[aname] = (fname, lname, siteid, atype, flags)
         
         # Set list changed indicator
-        listchanged = True
+        listchanged[self._id] = True
     
     
     def delete(self, aname):
@@ -221,7 +224,7 @@ class AddonList(dict):
         del self[aname]
          
         # Set list changed indicator
-        listchanged = True
+        listchanged[self._id] = True
     
     
     def getSome(self, aname):
@@ -840,7 +843,7 @@ def loadLanguages():
         outMessage("Loading languages from %s" % (langdir))
         for f in os.listdir(langdir):
             if "lang" in f and ".xml" in f: # TODO: Better check
-                outDebug("Loading language file %s" % (f))
+                # outDebug("Loading language file %s" % (f))
                 try:
                     WurmLanguage.loadLanguageFile(os.path.join(langdir, f))
                 except Exception, details:
@@ -1195,8 +1198,6 @@ def DeleteAddons(listedaddons, cleansettings=False):
                 else:
                     outError(_("Failed to remove %(addon)s: %(details)s") % {'addon': addon, 'details': str(details)})
                     failed += 1
-        # else:
-        #     outWarning(_("Addon %(addon)s doesn't exist, %(details)s") % {'addon': addon, 'details': _('Flagged for install')})
         
         # Then do some cleanup if required
         if cleansettings:
@@ -1282,23 +1283,29 @@ def FindRecentDownloads(addon, ageminutes=180):
     
     base_re = "[-_]?[vr]?.*\d*.*\.zip|rar"
     filename_re =  addon + base_re # typically, most will match this regexp
-    acronym_re = acronym(addon) + base_re # some will only match this (DeadlyBossMods -> DBM)
     
-    fre = re.compile(filename_re)
-    fre2 = re.compile(acronym_re) # we only use this if the first one doesn't return ANYTHING
-    
+    # add "^" to ensure correct file is chosen
+    fre = re.compile("^" + filename_re)
+
     filelist = os.listdir(bdd)
     tmpresult = []
     
     # Find all matching files
     for fn in filelist:
         if len(fre.findall(fn)) > 0:
-            tmpresult.append(fn)
-    
-    if len(tmpresult) == 0: # second pass with acronym regexp
-        for fn in filelist:
-            if len(fre2.findall(fn)) > 0:
+            if fn[-3:] == "zip" or fn[-3:] == "rar":
                 tmpresult.append(fn)
+    
+    # use this if the first one doesn't return ANYTHING
+    if len(tmpresult) == 0:
+        acronym_re = acronym(addon) + base_re # some will only match this (DeadlyBossMods -> DBM)
+        if len(acronym_re) > 1: # if we made an acronym larger than 1 character
+            fre = re.compile("^" + acronym_re)
+            # Find all matching files
+            for fn in filelist:
+                if len(fre.findall(fn)) > 0:
+                    if fn[-3:] == "zip" or fn[-3:] == "rar":
+                        tmpresult.append(fn)
     
     # Then filter out older files (and add full path to the name)
     cutoff = datetime.now() - timedelta(minutes=ageminutes)

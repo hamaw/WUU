@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# $Id: WurmUnpack.py 645 2009-05-04 20:30:53Z jonhogg $
+# $Id: WurmUnpack.py 662 2009-06-01 18:42:41Z jonhogg $
 
 # Copyright (c) 2006-2009 The WUU Development Team
 #
@@ -738,6 +738,8 @@ def MapFilenames(addonname, filelist, addonsonly=False, isChild=False):
     wowtoplevelfolders = ["fonts", "interface"] #case insensitve - only allowed folders for addons to put files in
     ignorefolders = ["__MACOSX", "FrameXML", ".svn", ".git"] # folders to ignore
     
+    aalibs = ["Babylonian", "Configator", "DebugLib", "TipHelper"] # Auc-Advanced Libraries
+    
     ia_re = "^" + interfaceaddonsre
     reia  = re.compile(ia_re, re.I)
     
@@ -779,8 +781,15 @@ def MapFilenames(addonname, filelist, addonsonly=False, isChild=False):
         if filename == "nopatch" or len(filename) == 0:
             continue
         
-        # Ignore Library .toc files (prevents them from being installed separately)
-        if (filename[:3] == "Lib" or "Library" in filename) and ext == ".toc":
+        # Ignore sub Library .toc files (prevents them from being installed separately)
+        if (filename[:3] == "Lib" or "Library" in filename) and ext == ".toc" and filename != directory:
+            continue
+            
+        if filename == "AceGUI-3.0-SharedMediaWidgets" and ext == ".toc" and filename != directory:
+            continue
+        
+        # ignore Auc-Advanced Libraries
+        if filename in aalibs and ext == ".toc" and filename != directory:
             continue
         
         # Ignore entries that are already set as Ignore/Dummy

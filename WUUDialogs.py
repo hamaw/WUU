@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# $Id: WUUDialogs.py 645 2009-05-04 20:30:53Z jonhogg $
+# $Id: WUUDialogs.py 658 2009-06-01 15:28:28Z jonhogg $
 
 # Copyright (c) 2006-2009 The WUU Development Team
 #
@@ -53,6 +53,7 @@ availablesites = {
     "GoogleCode":("http://code.google.com/hosting/search?q=label:worldofwarcraft", _("Site ID is developer name. e.g.:\"tekkub-wow\""), ""),
     "GoogleCodeSVN":("http://code.google.com/hosting/search?q=label:worldofwarcraft", _("Site ID is developer name + | + addon directory,\n e.g.: --> wow-haste|Fane\n Optionally, a branch can be specified --> wow-haste|branches/QuestCopy"), ""),
     "WoWAce":("http://www.wowace.com/projects/", _("Site ID is directory name"), "%s"),
+    "WoWAceClone":("http://www.wowace.com/projects/Addon/repositories/", _("Site ID is clone name"), "%s"),
     "WoWI":("http://www.wowinterface.com/", _("Site ID is numeric + Addon name from site. e.g.: \"5001-Minimalist\""), "XXXX-%s"),
     "WoWUI":("http://wowui.incgamers.com/", _("Site ID is the number after m= in the URL"), "%s"),
     "OtherSite":("", _("Please refer to %(wuuki)sOtherSites for Instructions"), ""),
@@ -78,7 +79,6 @@ lcColour["Pending"]   = (255, 127, 0) # addon update available - default Amber
 lcColour["Unknown"]   = (255, 230, 230) # unknown local version
 lcColour["Outdated"]  = (255, 230, 255) # addon outdated
 lcColour["New"]       = (230, 230, 255) # new addon
-
 
 class Label(wx.StaticText):
     """
@@ -168,7 +168,7 @@ class WurmAddonEditDlg(wx.Dialog):
         grid.Add(self.fname, 1, rcflags, 3)
         
         # Source Site
-        self.site = wx.ComboBox(self, -1, choices=asKeys, style=wx.wx.CB_DROPDOWN | wx.CB_READONLY)
+        self.site = wx.ComboBox(self, -1, choices=asKeys, style=wx.CB_DROPDOWN | wx.CB_READONLY)
         startsite = WurmCommon.addonlist.getAtype(addon)
         self.site.SetStringSelection(startsite)
         grid.Add(Label(self, _('Source Site: ')), 0, lcflags, 3)
@@ -187,24 +187,32 @@ class WurmAddonEditDlg(wx.Dialog):
         # Config options, unpopulated
         self.conf = self.confcontrols = self.conflabels = {}
         
+        cKeys = []
         # Populate config options
         if addon in WurmCommon.addons:
             self.conf = WurmCommon.addons[addon].configurable
+            # sort the configuration parameters
+            cKeys = self.conf.keys()
+            cKeys.sort()
         
         # Go through the list of custom config settings for this addon
         # and populate them in the dialog.
-        for c in self.conf:
+        for c in cKeys:
             (key, desc, default) = self.conf[c]
             
             # Special instructions
             if key == "Instructions":
-                self.conflabels[key] = Label(self, "Instructions: ")
-                grid.Add(self.conflabels[key], 0, lcflags, 3)
+                # add a blank line before
+                grid.Add(wx.StaticText(self, -1, label=""), 0, rcflags, 3)
+                grid.Add(wx.StaticText(self, -1, label=""), 1, rcflags, 3)
                 
-                # the size is specified here so that it's a little longer when this param is present.
-                self.confcontrols[key] = wx.TextCtrl(self, -1, value="" , size=(400, -1), style=wx.TE_READONLY)
-                grid.Add(self.confcontrols[key], 1, rcflags, 3)
-            
+                grid.Add(Label(self, "Instructions: "), 0, lcflags, 3)
+                grid.Add(wx.StaticText(self, -1, label=desc), 1, rcflags, 3)
+                
+                # add a blank line after
+                grid.Add(wx.StaticText(self, -1, label=""), 0, rcflags, 3)
+                grid.Add(wx.StaticText(self, -1, label=""), 1, rcflags, 3)
+                
             # Everybody Else
             else:
                 
@@ -241,47 +249,28 @@ class WurmAddonEditDlg(wx.Dialog):
         # Add grid of controls to master sizer
         sizer.Add(grid, 1, wx.ALL | wx.EXPAND, 5)
         
-        # Sizer that contains  ... buttons!
-        # TODO: get rid of this and go with buttonsizer from wx
-        btnSizer = wx.StaticBoxSizer(wx.StaticBox(self, -1, ""), wx.HORIZONTAL)
-        
-        saveBtn = wx.Button(self, -1, "Save")
+        # setup save and cancel buttons
+        saveBtn = wx.Button(self, wx.ID_SAVE, "") #_("Save")
         self.Bind(wx.EVT_BUTTON, self.Save, saveBtn)
-        
-        canxBtn = wx.Button(self, -1, "Cancel")
+        canxBtn = wx.Button(self, wx.ID_CANCEL, "") #_("Cancel")
         self.Bind(wx.EVT_BUTTON, self.Cancel, canxBtn)
         
-        btnSizer.Add((10,10), 1, wx.EXPAND | wx.ALL, 5) # Puts buttons in the right place within the sizer
-        btnSizer.Add(saveBtn, 0, wx.EXPAND | wx.ALL, 5)
-        btnSizer.Add(canxBtn, 0, wx.EXPAND | wx.ALL, 5)
+        # put the buttons into a buttonsizer
+        btnSizer = wx.StdDialogButtonSizer()
+        btnSizer.AddButton(saveBtn)
+        btnSizer.AddButton(canxBtn)
+        btnSizer.SetAffirmativeButton(saveBtn)
+        btnSizer.SetCancelButton(canxBtn)
+        btnSizer.Realize()
         
+        # add button sizer
         sizer.Add(btnSizer, 0, wx.ALL | wx.EXPAND, 5)
+        
+        # resize the sizer
         self.SetSizer(sizer)
         sizer.Fit(self)
         
-        #
-        # Positioning of dialog. Previously, this was set by a saved parameter.
-        # Now, the dialog will open up under the mouse pointer, or close to it.
-        # Controls are in place to ensure that the dialog does not open off screen somewhere.
-        #
-        mpos = wx.GetMousePosition()        # Mouse position
-        dbox = self.GetRect()               # Dialog's footprint
-        sbox = wx.GetClientDisplayRect()    # Actual screen workspace
-        
-        # Adjust x-position if dialog is off-screen
-        if mpos.x < sbox.x:
-            mpos.x = sbox.x
-        elif mpos.x + dbox.width > sbox.width:
-            mpos.x = sbox.width - dbox.width
-        
-        # Adjust y-position if dialog is off-screen
-        if mpos.y < sbox.y:
-            mpos.y = sbox.y
-        elif mpos.y + dbox.height > sbox.height:
-            mpos.y = sbox.height - dbox.height
-        
-        # All set? OK, let's position it!
-        self.SetPosition(mpos)
+        positionDialog(self)
     
     
     def updateFlags(self):
@@ -355,7 +344,7 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         if wx.VERSION[:2] < (2, 8):
             self.filterok = False
         
-        wx.Dialog.__init__(self, parent, title=self.title, size=(600, 400), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
+        wx.Dialog.__init__(self, parent, title=self.title, size=(660, 400), style=wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
         
         # Initialize dictionaries
         self.addonlist    = addonlist
@@ -378,15 +367,13 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         self.lc = ListCtrlAutoWidth(self, wx.ID_ANY, style=wx.LC_REPORT | wx.LC_SORT_ASCENDING)
         self.lc.InsertColumn(0, _("Name"))
         self.lc.InsertColumn(1, _("Ins?"), format=wx.LIST_FORMAT_CENTRE)
-        self.lc.InsertColumn(2, _("Category"))
-        self.lc.InsertColumn(3, _("Version"))
-        self.lc.InsertColumn(4, _("Note"))
+        self.lc.InsertColumn(2, _("Version"))
+        self.lc.InsertColumn(3, _("Note"))
         
-        self.lc.SetColumnWidth(0, 160)
-        self.lc.SetColumnWidth(1, 50)
-        self.lc.SetColumnWidth(2, 120)
-        self.lc.SetColumnWidth(3, 90)
-        self.lc.SetColumnWidth(4, 160)
+        self.lc.SetColumnWidth(0, 150)
+        self.lc.SetColumnWidth(1, 40)
+        self.lc.SetColumnWidth(2, 50)
+        self.lc.SetColumnWidth(3, 200)
         
         self.lc.SetImageList(self.il, wx.IMAGE_LIST_SMALL)
         
@@ -396,23 +383,24 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         
         # Add Buttons
         self.btnToggle = wx.Button(self, wx.ID_ANY, _("Toggle Install"))
-        self.btnClose  = wx.Button(self, wx.ID_ANY, _("Close and Download"))
-        self.btnCancel = wx.Button(self, wx.ID_ANY, _("Cancel"))
-        
-        if self.filterok:
-            # TEST: Adding a filter box (active search) - SearchCtrl has a friendly magnifying glass and everything :)
-            self.filter = wx.SearchCtrl(self, style=wx.TE_PROCESS_ENTER)
-            self.filter.SetDescriptiveText("Search")
-            self.filter.ShowCancelButton(True)
-            self.filter.SetToolTip(wx.ToolTip(_("Enter a string to search for in the Name or Note")))
+        self.btnClose  = wx.Button(self, wx.ID_CLOSE, _("Close and Download"))
+        self.btnCancel = wx.Button(self, wx.ID_CANCEL, "") #_("Cancel"))
         
         # Put them all in a BoxSizer
         hbox = wx.BoxSizer(wx.HORIZONTAL)
         hbox.Add(self.btnToggle, proportion=1)
         hbox.Add(self.btnClose, proportion=1)
         hbox.Add(self.btnCancel, proportion=1)
+        
+        if self.filterok:
+            self.filter = wx.SearchCtrl(self, style=wx.TE_PROCESS_ENTER)
+            self.filter.SetDescriptiveText("Search")
+            self.filter.ShowCancelButton(True)
+            self.filter.SetToolTip(wx.ToolTip(_("Enter a string to search for in the Name or Note")))
+        
         if self.filterok:
             hbox.Add(self.filter, proportion=1)
+            
         gbsizer.Add(hbox, (1, 0))
         
         self.SetSizer(gbsizer)
@@ -426,8 +414,6 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
             self.Bind(wx.EVT_TEXT, self.OnFilterChanged, self.filter)
             self.Bind(wx.EVT_SEARCHCTRL_CANCEL_BTN, self.OnCancelFilter, self.filter)
         self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
-        self.Bind(wx.EVT_MOVE, self.OnMove)
-        self.Bind(wx.EVT_SIZE, self.OnResize)
         
         # List Sorting
         listmix.ColumnSorterMixin.__init__(self,4)
@@ -442,19 +428,11 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         except Exception, details:
             logger.exception("Error refreshing the Addon List, %s" % (str(details)))
         
-        try:
-            # Set the frame position based upon the saved settings
-            self.SetPosition((int(self.settingslist.setdefault("AFrameX", 15)), \
-                              int(self.settingslist.setdefault("AFrameY", 22))))
-            # Set the frame size based upon the saved settings
-            self.SetSize((int(self.settingslist.setdefault("AFrameW", 600)), \
-                          int(self.settingslist.setdefault("AFrameH", 400))))
-        except:
-            pass
-        
         # Select the first entry
         self.lc.Select(0)
         self.lc.Focus(0)
+        
+        positionDialog(self)
     
     
     def _showTitle(self):
@@ -471,14 +449,12 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         (fName, lName, siteId, aType) = self.addonlist.getSome(addon)
         ver = ""
         notes = ""
-        cat = ""
         if lName in self.addontoclist:
             notes = self.addontoclist[lName].getTextField("Notes")
             ver = self.addontoclist[lName].getTextField("WUU-Version")
-            cat = self.addontoclist[lName].getTextField("X-Category")
         
         # filter the addons
-        filterstring = ("|".join((lName, cat, notes))).upper() # case insensitive
+        filterstring = ("|".join((lName, notes))).upper() # case insensitive
         if not self.oldfilter.upper() in filterstring: # simple implementation of filter
             return
         
@@ -499,11 +475,10 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
             self.lc.SetItemBackgroundColour(ix, wx.WHITE)
         
         self.lc.SetStringItem(ix, 1, instval)
-        self.lc.SetStringItem(ix, 2, cat)
-        self.lc.SetStringItem(ix, 3, ver)
-        self.lc.SetStringItem(ix, 4, notes)
+        self.lc.SetStringItem(ix, 2, ver)
+        self.lc.SetStringItem(ix, 3, notes)
         
-        self.itemDataMap[data] = (lName.upper(), instval, cat, ver, notes)
+        self.itemDataMap[data] = (lName.upper(), instval, ver, notes)
     
     
     def GetListCtrl(self):
@@ -575,7 +550,9 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
                 self.toInstall = []
         
         installlist = self.toInstall
-        self.Destroy()  # frame
+        
+        # end the dialog
+        self.EndModal(wx.ID_OK)
     
     
     def OnFilterChanged(self, event):
@@ -588,30 +565,6 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
         
         self.oldfilter = newfilter
         self.RefreshAddonList()
-    
-    
-    def OnMove(self, event):
-        """"""
-        tracer.debug("WurmAddonInstallDlg - OnMove")
-        
-        pos = self.GetPosition()
-        # update settings with new values
-        self.settingslist["AFrameX"] = pos.x
-        self.settingslist["AFrameY"] = pos.y
-        
-        event.Skip()
-    
-    
-    def OnResize(self, event):
-        """"""
-        tracer.debug("WurmAddonInstallDlg - OnResize")
-        
-        size = self.GetSize()
-        # update settings with new values
-        self.settingslist["AFrameW"] = size.x
-        self.settingslist["AFrameH"] = size.y
-        
-        event.Skip()
     
     
     def OnToggle(self, event):
@@ -639,7 +592,7 @@ class WurmAddonInstallDlg(wx.Dialog, listmix.ColumnSorterMixin, WurmUtility.Type
                     instval = ''
                     self.lc.SetItemBackgroundColour(curitem, wx.WHITE)
                 self.lc.SetStringItem(curitem, 1, instval)
-                self.itemDataMap[data] = (oldmap[0], instval, oldmap[2], oldmap[3], oldmap[4])
+                self.itemDataMap[data] = (oldmap[0], instval, oldmap[2], oldmap[3])
             else:
                 break
         
@@ -702,22 +655,25 @@ class WurmAdvancedRestoreDlg(wx.Dialog, listmix.ColumnSorterMixin):
         gbsizer.AddGrowableCol(0)
         
         # Add Buttons
-        self.btnOnlineVersions = wx.Button(self, wx.ID_ANY, _("Add online versions"))
-        self.Bind(wx.EVT_BUTTON, self.OnAddOnlineVersions, self.btnOnlineVersions)
-        self.btnOnlineVersions.Disable()
+        btnOnlineVersions = wx.Button(self, wx.ID_ADD, _("Add online versions"))
+        self.Bind(wx.EVT_BUTTON, self.OnAddOnlineVersions, btnOnlineVersions)
+        btnOnlineVersions.Disable()
+        btnOk = wx.Button(self, wx.ID_OK, _("Restore"))
+        self.Bind(wx.EVT_BUTTON, self.OnRestore, btnOk)
+        btnCancel = wx.Button(self, wx.ID_CANCEL, "") #_("Cancel"))
         
-        self.btnOk = wx.Button(self, wx.ID_OK, _("Restore"))
-        self.Bind(wx.EVT_BUTTON, self.OnRestore, self.btnOk)
+        # put the buttons into a buttonsizer
+        btnSizer = wx.StdDialogButtonSizer()
+        btnSizer.AddButton(btnOnlineVersions)
+        btnSizer.AddButton(btnOk)
+        btnSizer.AddButton(btnCancel)
+        btnSizer.SetNegativeButton(btnOnlineVersions) # just used to position the button
+        btnSizer.SetAffirmativeButton(btnOk)
+        btnSizer.SetCancelButton(btnCancel)
+        btnSizer.Realize()
         
-        self.btnCancel = wx.Button(self, wx.ID_CANCEL, _("Cancel"))
-        
-        # Put them all in a BoxSizer
-        hbox = wx.BoxSizer(wx.HORIZONTAL)
-        hbox.Add(self.btnOnlineVersions, proportion=1)
-        hbox.Add(wx.StaticText(self))
-        hbox.Add(self.btnCancel, proportion=1)
-        hbox.Add(self.btnOk, proportion=1)
-        gbsizer.Add(hbox, (1, 0))
+        # add button sizer
+        gbsizer.Add(btnSizer, (1, 0))
         
         self.SetSizer(gbsizer)
         
@@ -725,24 +681,18 @@ class WurmAdvancedRestoreDlg(wx.Dialog, listmix.ColumnSorterMixin):
         listmix.ColumnSorterMixin.__init__(self, 4)
         self._colSortFlag[1] = -1 # Sort Descending on first click
         
-        try:
-            # Set the frame position based upon the saved settings
-            self.SetPosition((int(self.settingslist.setdefault("RFrameX", 15)), \
-                              int(self.settingslist.setdefault("RFrameY", 22))))
-            # Set the frame size based upon the saved settings
-            self.SetSize((int(self.settingslist.setdefault("RFrameW", 600)), \
-                          int(self.settingslist.setdefault("RFrameH", 400))))
-        except:
-            pass
-        
         self.restoreaddon = addon
         
         self._populateList()
+        if self.lc.GetItemCount() > 0:
+            # Select the first entry
+            self.lc.Select(0)
+            self.lc.Focus(0)
+        else:
+            btnOk.Disable()
+            
+        positionDialog(self)
         
-        # Select the first entry
-        self.lc.Select(0)
-        self.lc.Focus(0)
-    
     
     def _populateList(self, clear = True, online = False):
         """"""
@@ -1038,47 +988,27 @@ class WUUPreferencesDlg(wx.Dialog):
         # All of the above gets added to the main sizer
         sizer.Add(grid, 1, wx.EXPAND | wx.ALL, 20)
         
-        # Sizer that contains  ... buttons!
-        btnSizer = wx.StaticBoxSizer(wx.StaticBox(self, -1, ""), wx.HORIZONTAL)
-        
-        saveBtn = wx.Button(self, -1, "Save")
+        # setup save and cancel buttons
+        saveBtn = wx.Button(self, wx.ID_SAVE, "") #_("Save")
         self.Bind(wx.EVT_BUTTON, self.Save, saveBtn)
-        
-        canxBtn = wx.Button(self, -1, "Cancel")
+        canxBtn = wx.Button(self, wx.ID_CANCEL, "") #_("Cancel")
         self.Bind(wx.EVT_BUTTON, self.Cancel, canxBtn)
         
-        btnSizer.Add((10,10), 1, wx.EXPAND | wx.ALL, 5) # Puts buttons in the right place within the sizer
-        btnSizer.Add(saveBtn, 0, wx.EXPAND | wx.ALL, 5)
-        btnSizer.Add(canxBtn, 0, wx.EXPAND | wx.ALL, 5)
+        # put the buttons into a buttonsizer
+        btnSizer = wx.StdDialogButtonSizer()
+        btnSizer.AddButton(saveBtn)
+        btnSizer.AddButton(canxBtn)
+        btnSizer.SetAffirmativeButton(saveBtn)
+        btnSizer.SetCancelButton(canxBtn)
+        btnSizer.Realize()
         
+        # add button sizer
         sizer.Add(btnSizer, 0, wx.ALL | wx.EXPAND, 5)
         
         self.SetSizer(sizer)
         sizer.Fit(self)
         
-        #
-        # Positioning of dialog. Previously, this was set by a saved parameter.
-        # Now, the dialog will open up under the mouse pointer, or close to it.
-        # Controls are in place to ensure that the dialog does not open off screen somewhere.
-        #
-        mpos = wx.GetMousePosition()        # Mouse position
-        dbox = self.GetRect()               # Dialog's footprint
-        sbox = wx.GetClientDisplayRect()    # Actual screen workspace
-        
-        # Adjust x-position if dialog is off-screen
-        if mpos.x < sbox.x:
-            mpos.x = sbox.x
-        elif mpos.x + dbox.width > sbox.width:
-            mpos.x = sbox.width - dbox.width
-        
-        # Adjust y-position if dialog is off-screen
-        if mpos.y < sbox.y:
-            mpos.y = sbox.y
-        elif mpos.y + dbox.height > sbox.height:
-            mpos.y = sbox.height - dbox.height
-        
-        # All set? OK, let's position it!
-        self.SetPosition(mpos)
+        positionDialog(self)
     
     
     def Cancel(self, event):
@@ -1215,6 +1145,33 @@ def _listid(objectname):
         listctrlnextID += 1
     
     return listctrlIDs[objectname]
+
+
+def positionDialog(dialog):
+    
+    #
+    # Positioning of dialog. Previously, this was set by a saved parameter.
+    # Now, the dialog will open up under the mouse pointer, or close to it.
+    # Controls are in place to ensure that the dialog does not open off screen somewhere.
+    #
+    mpos = wx.GetMousePosition()        # Mouse position
+    dbox = dialog.GetRect()             # Dialog's footprint
+    sbox = wx.GetClientDisplayRect()    # Actual screen workspace
+    
+    # Adjust x-position if dialog is off-screen
+    if mpos.x < sbox.x:
+        mpos.x = sbox.x
+    elif mpos.x + dbox.width > sbox.width:
+        mpos.x = sbox.width - dbox.width
+    
+    # Adjust y-position if dialog is off-screen
+    if mpos.y < sbox.y:
+        mpos.y = sbox.y
+    elif mpos.y + dbox.height > sbox.height:
+        mpos.y = sbox.height - dbox.height
+    
+    # All set? OK, let's position it!
+    dialog.SetPosition(mpos)
 
 
 def GetSite():

@@ -1083,56 +1083,8 @@
         <translation>Site ID:</translation>
       </string>
       <string>
-        <original>Install %(site)s Addons" % { "site": addonsite })
-        self.oldfilter = ""
-        
-        wx.Dialog.__init__(self, parent, id, self.title, wx.DefaultPosition, size = (600, 400), style = wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
-        
-        # Initialize dictionaries
-        self.addonlist    = addonlist
-        self.addontoclist = addontoclist
-        self.settingslist = settingslist
-        self.toInstall    = []
-        
-        # Counts for displaying in the title line
-        self.countt = len(self.addonlist)
-        self.counti = 0
-        self.countf = len(self.toInstall)
-        
-        # Resources
-        self.il    = wx.ImageList(16, 16)
-        self.sm_up = self.il.Add(images.getSmallUpArrowBitmap())
-        self.sm_dn = self.il.Add(images.getSmallDnArrowBitmap())
-        
-        # Controls
-        gbsizer = wx.GridBagSizer(2, 2)
-        self.lc = ListCtrlAutoWidth(self, 7001, style = wx.LC_REPORT | wx.LC_SORT_ASCENDING)
-        self.lc.InsertColumn(0, _('Name</original>
-        <translation>Install %(site)s Addons" % { "site": addonsite })
-        self.oldfilter = ""
-        
-        wx.Dialog.__init__(self, parent, id, self.title, wx.DefaultPosition, size = (600, 400), style = wx.DEFAULT_DIALOG_STYLE | wx.RESIZE_BORDER)
-        
-        # Initialize dictionaries
-        self.addonlist    = addonlist
-        self.addontoclist = addontoclist
-        self.settingslist = settingslist
-        self.toInstall    = []
-        
-        # Counts for displaying in the title line
-        self.countt = len(self.addonlist)
-        self.counti = 0
-        self.countf = len(self.toInstall)
-        
-        # Resources
-        self.il    = wx.ImageList(16, 16)
-        self.sm_up = self.il.Add(images.getSmallUpArrowBitmap())
-        self.sm_dn = self.il.Add(images.getSmallDnArrowBitmap())
-        
-        # Controls
-        gbsizer = wx.GridBagSizer(2, 2)
-        self.lc = ListCtrlAutoWidth(self, 7001, style = wx.LC_REPORT | wx.LC_SORT_ASCENDING)
-        self.lc.InsertColumn(0, _('Name</translation>
+        <original>Install %(site)s Addons</original>
+        <translation>Install %(site)s Addons</translation>
       </string>
       <string>
         <original>Ins?</original>

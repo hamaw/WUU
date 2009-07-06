@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# $Id: Wurm.py 649 2009-05-07 12:10:25Z jonhogg $
+# $Id: Wurm.py 666 2009-06-30 17:37:45Z lejordet $
 
 # Copyright (c) 2006-2009 The WUU Development Team
 #
@@ -739,7 +739,7 @@ class AuctioneerAddon(Addon):
         Addon.__init__(self, localname, siteid, baseurl=baseurl, flags=flags)
         
         self.addontype = "Auctioneer"
-        self.dlURLprefix = "http://mirror.auctioneeraddon.com/dl/Packages52/"
+        self.dlURLprefix = "http://mirror.auctioneeraddon.com/dl/"
         self.re = "auct_version2"
     
     
@@ -775,10 +775,10 @@ class AuctioneerAddon(Addon):
         
         try: # 'Stubby/stubby-3.8.0.zip', 'stubby-3.8.0.zip', '2006', '09', '02'
             
-            (url, filename, year, month, day) = verdata[0]
+            (place, url, filename, year, month, day) = verdata[0]
             
             version = int("%s%s%s" % (year, month, day)) # hours/minutes/ampm aren't used, to keep length down
-            self.dlURL = url
+            self.dlURL = ("%s/%s" % (place, url))
         except Exception, details:
             WurmCommon.outWarning(_("Can't get a readable date for %(addon)s out of the page: %(dets)s (%(vdata)s)") % {'addon': self.localname, 'dets': str(details), 'vdata': str(verdata[0])})
         
@@ -1424,7 +1424,7 @@ class GoogleCodeSVNAddon(Addon):
 
 
 class WoWAceAddon(Addon):
-    def __init__(self, localname, siteid, baseurl="http://www.wowace.com", flags={}):
+    def __init__(self, localname, siteid, baseurl="http://war.curseforge.com", flags={}):
         """"""
         tracer.debug("WoWAceAddon - __init__: %s" % localname)
         
@@ -1444,16 +1444,25 @@ class WoWAceAddon(Addon):
         """"""
         tracer.log(WurmCommon.DEBUG5, "WoWAceAddon - getAddonURL")
         
-        return self.baseurl + "/projects/" + self.siteid
+        return "%s/projects/%s" % (self.baseurl, self.siteid)
     
     
     def getAddonDlURL(self):
         """ URL of download page for latest version """
+        tracer.debug("WoWAceAddon - getAddonDlURL")
+        
         if not self.dlURL:
             if self.getOnlineModVersion() < 0:
                 return None
         
         return self.dlURL
+    
+    
+    def getAddonFilesDlURL(self):
+        """ URL of download page for all versions """
+        tracer.debug("WoWAceAddon - getAddonFilesDlURL")
+        
+        return "%s/projects/%s/files" % (self.baseurl, self.siteid)
     
     
     def getOnlineModVersion(self):
@@ -1480,6 +1489,76 @@ class WoWAceAddon(Addon):
             return -1
         
         self.dlURL = "%s/projects/%s/files/%s" % (self.baseurl, self.siteid, dldata[0])
+        
+        if len(datedata) == 0:
+            WurmCommon.outWarning(_("Could not find %(addon)s update date on page - is site ID correct?") % {'addon': self.localname})
+            return -1
+        
+        adate = gmtime(float(datedata[0]))
+        version = int("%04d%02d%02d" % (adate.tm_year, adate.tm_mon, adate.tm_mday))
+        
+        WurmCommon.outDebug("%s online version: %s" % (self.localname, version))
+        
+        return version
+    
+
+
+class WoWAceCloneAddon(Addon):
+    def __init__(self, localname, siteid, baseurl="http://www.wowace.com", flags={}):
+        """"""
+        tracer.debug("WoWAceCloneAddon - __init__: %s" % localname)
+        
+        Addon.__init__(self, localname, siteid, baseurl=baseurl, flags=flags)
+        
+        # Define additional configuration parameters
+        self.addontype = "WoWAceClone"
+    
+    
+    def getAddonURL(self):
+        """"""
+        tracer.debug("WoWAceCloneAddon - getAddonURL")
+        
+        return "%s/projects/%s/repositories/%s" % (self.baseurl, self.localname, self.siteid)
+    
+    
+    def getAddonDlURL(self):
+        """ URL of download page for latest version """
+        tracer.debug("WoWAceCloneAddon - getAddonDlURL")
+        
+        return self.getAddonFilesDlURL()
+    
+    
+    def getAddonFilesDlURL(self):
+        """ URL of download page for all versions """
+        tracer.debug("WoWAceCloneAddon - getAddonFilesDlURL")
+        
+        return "%s/projects/%s/repositories/%s/files" % (self.baseurl, self.localname, self.siteid)
+    
+    
+    def getOnlineModVersion(self):
+        """"""
+        tracer.debug("WoWAceCloneAddon - getOnlineModVersion")
+        
+        # download the clones files webpage
+        htm = self.downloadPage(self.getAddonFilesDlURL())
+        if type(htm) is int:
+            return htm
+        
+        # find download info and date
+        dlver_re = WurmCommon.siteregexps["wowaceclone_dlversion"] % (self.localname, self.siteid)
+        dldata = re.compile(dlver_re, re.I).findall(htm) # case insensitive match
+        
+        date_re = WurmCommon.siteregexps["wowaceclone_version"]
+        datedata = re.compile(date_re).findall(htm)
+        
+        # WurmCommon.outDebug("download: %s" % dldata)
+        # WurmCommon.outDebug("date: %s" % datedata)
+        
+        if len(dldata) == 0:
+            WurmCommon.outWarning(_("Could not find %(addon)s download info on page - is site ID correct?") % {'addon': self.localname})
+            return -1
+        
+        self.dlURL = "%s/projects/%s/repositories/%s/files/%s" % (self.baseurl, self.localname, self.siteid, dldata[0])
         
         if len(datedata) == 0:
             WurmCommon.outWarning(_("Could not find %(addon)s update date on page - is site ID correct?") % {'addon': self.localname})
@@ -2097,6 +2176,7 @@ WurmCommon.addontypes = {
     "GoogleCode":       GoogleCodeAddon,
     "GoogleCodeSVN":    GoogleCodeSVNAddon,
     "WoWAce":           WoWAceAddon,
+    "WoWAceClone":      WoWAceCloneAddon,
     "WoWI":             WoWIAddon,
     "WoWUI":            WoWUIAddon,
     "OtherSite":        OtherSiteAddon,
@@ -2282,11 +2362,6 @@ def getAddonSettings(filename, loadSpecialFlags=True):
         else:
             specialflags = None
         
-        # # Replace UIWoW siteid with Unknown (2007/05/12)
-        # if adt and adt == "UIWoW":
-        #     adt = "[Unknown]"
-        #     WurmCommon.outWarning(_("WUU is blocked by ui.worldofwar.net as of 2007-05-12, support for %(addon)s is disabled") % {'addon': lon})
-        # 
         # Add to the Addon dictionary
         newaddonlist.add(lon, fname=frn, siteid=sid, atype=adt, flags=specialflags)
         
@@ -2307,14 +2382,12 @@ def getAddonSettings(filename, loadSpecialFlags=True):
                 newtoclist[lon].setField("Notes", tnotes)
             # TODO: Dependencies
         
-        WurmCommon.outDebug("Loaded %s (%s)" % (lon, adt))
+        # WurmCommon.outDebug("Loaded %s (%s)" % (lon, adt))
     
     dom.unlink()
     WurmCommon.outMessage(_("Loaded settings, %(num)d Addons found") % {'num': len(newaddonlist)})
     WurmCommon.outStatus(_("Done loading settings"))
     WurmCommon.resetProgress()
-    
-    WurmCommon.listchanged = False # so we don't falsely trigger the "wanna save?"-dialog
     
     return (newaddonlist, newtoclist)
 
@@ -2338,9 +2411,6 @@ def getCosmosAddonSettings():
     newtoclist   = {}
     
     WurmCommon.outMessage(_("Opening %(calist)s") % {'calist': WurmCommon.cosmosaddonslist})
-#    f = urllib2.urlopen(cosmosaddonslist)
-#    htm = f.read()
-#    f.close()
     htm = WurmCommon.downloadPage(WurmCommon.cosmosaddonslist)
     
     version_re = WurmCommon.siteregexps["cosmos_mlist2"]
@@ -2365,7 +2435,7 @@ def getCosmosAddonSettings():
             newtoclist[addon].setField("Notes", description)
             newtoclist[addon].setField("WUU-Version", revision)
         
-        WurmCommon.outDebug("Loaded %s" % (addon))
+        # WurmCommon.outDebug("Loaded %s" % (addon))
     
     WurmCommon.outMessage(_("Loaded Cosmos, %(num)d Addons found") % {'num': len(newaddonlist)})
     WurmCommon.outStatus(_("Done loading Cosmos addon list"))
@@ -2401,44 +2471,6 @@ def identifyAddonFromURL(url):
     
     siteid = ""
     
-    # Check the different possible sites
-    # if 'svn.wowace.com' in site: # Handle this first, since we do the other forms of wowace.com links later
-    #     # http://svn.wowace.com/wowace/branches/Grid/jerry/Grid/
-    #     
-    #     if not page[:8] == '/wowace/':
-    #         raise WurmURLParseException(site="AceSVN")
-    #     
-    #     siteid = page[8:]
-    #     parts = siteid.split('/')
-    #     addonname = parts[1]
-    #     if len(parts) < 2:
-    #         raise WurmURLParseException(site="AceSVN")
-    #     
-    #     return (addonname, "AceSVN", siteid)
-    # 
-    # elif 'wowace.com' in site: # Support two different forms of WoWAce.com links - either to a specific addon on files.wowace.com, or to the relevant wiki
-    #     if 'files' in site or 'files' in page:
-    #         path = page.split('/')
-    #         if len(path) < 2:
-    #             raise WurmURLParseException(site="WoWAce")
-    #         
-    #         if path[1] == 'files':
-    #             siteid = path[2]
-    #         else:
-    #             siteid = path[1]
-    #     
-    #     elif 'wiki' in page:
-    #         path = page.split('/')
-    #         if len(path) < 3:
-    #             raise WurmURLParseException(site="WoWAce")
-    #         
-    #         siteid = path[2]
-    #     
-    #     if not siteid:
-    #         raise WurmURLParseException(site="WoWAce")
-    #     
-    #     return (siteid, "WoWAce", siteid)
-    # 
     if 'googlecode.com' in site and 'svn' in page: # Google Code SVN
         path = []
         try:
@@ -2985,18 +3017,17 @@ def purgeMissing():
     tmpaddonlist = WurmCommon.addonlist.keys() # work on a copy of addonlist
     for addon in tmpaddonlist:
         if WurmCommon.addonlist.getFlag(addon, "missing"):
-            del WurmCommon.addonlist[addon]
+            WurmCommon.addonlist.delete(addon)
             if WurmCommon.addons.has_key(addon):
                 del WurmCommon.addons[addon]
             
             if WurmCommon.toclist.has_key(addon):
                 del WurmCommon.toclist[addon]
             
-            WurmCommon.listchanged = True
             removedcount += 1
     
     # Save any changes made so they aren't lost :)
-    if WurmCommon.listchanged:
+    if WurmCommon.listchanged[WurmCommon.addonlist._id]:
         saveAddonSettings()
     
     msg = _("Purged %(num)d missing Addons from the list") % {'num':removedcount}
@@ -3159,12 +3190,12 @@ def saveAddonSettings(alternateFileName=None, selection=None, saveSpecialFlags=T
             pass # Unicode errors might happen here, but we can safely ignore them for now
         
         waddons.appendChild(addon)
-        WurmCommon.outDebug("Saved %s" % (a))
+        # WurmCommon.outDebug("Saved %s" % (a))
     
     top_element.appendChild(waddons)
     
     targetFileName = addondatafile
-    formatPretty = False
+    formatPretty = True #False
     if alternateFileName != None:
         targetFileName = alternateFileName
         formatPretty = True # Using "pretty" XML on exports, plain on internal file
@@ -3181,7 +3212,7 @@ def saveAddonSettings(alternateFileName=None, selection=None, saveSpecialFlags=T
     except IOError, details:
         WurmCommon.outError(_("Unable to write to file %(file)s: %(error)s") % {'file':targetFileName, 'error':str(details)})
     
-    WurmCommon.listchanged = False
+    WurmCommon.listchanged[WurmCommon.addonlist._id] = False
     
     WurmCommon.outMessage(_("Saved settings"))
     WurmCommon.outStatus(_("Done saving settings"))
@@ -3213,10 +3244,6 @@ def scanAddons(forceInstallMissing=True):
             WurmCommon.outProgressPercent(_("Scanning Addons directory"), countaddons/totaladdons)
         
         seenaddons.append(a)
-        # 
-        # # Check to see if the !!!StandaloneLibraries Addon is installed
-        # if a == WurmCommon.SaL:
-        #     WurmCommon.SaLinstalled = True
         
         # Flag Blizzard Addons as [Ignore]
         if a[:9] == "Blizzard_":
@@ -3308,7 +3335,7 @@ def scanAddons(forceInstallMissing=True):
                 toInstall.append(a)
             else:
                 missadds += 1
-                WurmCommon.outDebug("Addon %(addon)s is missing" % {'addon': a})
+                # WurmCommon.outDebug("Addon %(addon)s is missing" % {'addon': a})
                 flaglater.append(a)
     
     for a in flaglater:
@@ -3319,7 +3346,7 @@ def scanAddons(forceInstallMissing=True):
             WurmCommon.addons[a].specialflags["missing"] = True
     
     # Save any changes made so they aren't lost :)
-    if WurmCommon.listchanged:
+    if WurmCommon.listchanged[WurmCommon.addonlist._id]:
         saveAddonSettings()
     
     WurmCommon.outMessage(_("Scanned Addon directory, %(snum)d Addons found (%(new)d new, %(ins)d installed fresh, %(miss)d missing, %(ign)d ignored, %(dum)d dummy, %(del)d deleted, %(chld)s children)") % {'snum': len(seenaddons) + childadds, 'new': newadds, 'ins': insadds, 'miss': missadds, 'ign': ignoreadds, 'dum': dummyadds, 'del': deladds, 'chld': childadds})

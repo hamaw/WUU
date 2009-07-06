@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# $Id: WUU.py 649 2009-05-07 12:10:25Z jonhogg $
+# $Id: WUU.py 666 2009-06-30 17:37:45Z lejordet $
 
 # Copyright (c) 2006-2009 The WUU Development Team
 #
@@ -23,7 +23,6 @@
 # Style rules from http://wiki.wxpython.org/index.cgi/wxPython_Style_Guide have been used
 # 2008-01-15: Applied patch 1866042 submitted by sourceforge user iroro
 # 2008-02-19: Applied patch 1878044 submitted by sourceforge user iroro
-
 
 # release version bump
 
@@ -102,7 +101,7 @@ translator = WurmCommon.WurmLanguage
 _          = translator.s
 
 # Revision & Version information
-revision    = "$Revision: 649 $"
+revision    = "$Revision: 666 $"
 revision    = revision[revision.find(":") + 1:-1].strip()
 wuuversion  = "%s.%s" % (Wurm.wurmversion, revision)
 __version__ = wuuversion
@@ -162,7 +161,7 @@ totaltasks = 0 # Count of how many tasks queued
 callbackcount = 0 # Count of how many callbacks expected
 selectedaddon = None # Addon whose info is being displayed
 # used to check Addon type
-typeManualDl = ["CurseGaming", "WoWAce", "WoWUI"]
+typeManualDl = ["CurseGaming", "WoWAce", "WoWAceClone", "WoWUI"]
 
 # HTML strings used to display information in the Right Hand Side Panel
 rPHTMLTop = """<html><body><center>
@@ -462,7 +461,7 @@ class CustomStatusBar(wx.StatusBar):
         self.pg2.SetSize((rect2.width-4, rect2.height-4))
         self.sizeChanged = False
     
-    
+
 
 class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlMixin):
     def __init__(self, title):
@@ -725,13 +724,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                     selList.append(fitem)
                 # check for related Addons if required
                 if getRelated:
-                    # if not fitem == WurmCommon.SaL:
                     relList = WurmCommon.findAllRelated(fitem)
-                    # else:
-                    #     for addon in WurmCommon.getSaLLibs():
-                    #         relList.append(addon)
-                    #         # For each SaL addon, check to see if it has an relations
-                    #         relList += WurmCommon.findAllRelated(addon)
             else:
                 break
         
@@ -777,7 +770,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         try:
             try:
                 # Decrement the callback count
-                WurmCommon.outDebug("_qTT: %d, _qC: %d, _tC: %d" % (totaltasks, callbackcount, threading.activeCount()))
+                # WurmCommon.outDebug("_qTT: %d, _qC: %d, _tC: %d" % (totaltasks, callbackcount, threading.activeCount()))
                 callbackcount -= 1
                 if totaltasks > 1:
                     WurmCommon.outProgressPercent2(callbackcount/totaltasks) # show how we're getting on
@@ -1216,7 +1209,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                     if len(name) > 0 and name not in ignoreset:
                         hasoldsettings = True # triggers a file backup
                         self.settings[name] = value
-                        WurmCommon.outDebug("Setting '%s' is '%s'" % (name, value))
+                        # WurmCommon.outDebug("Setting '%s' is '%s'" % (name, value))
                 
                 # Use new, shorter format ("better" XML - at least way shorter)
                 options = settingslist.findall("option")
@@ -1225,7 +1218,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                     value = opt.text.strip()
                     if name and len(name) > 0 and name not in ignoreset:
                         self.settings[name.strip()] = value
-                        WurmCommon.outDebug("Setting '%s' is '%s' [1.5 format]" % (name, value))
+                        # WurmCommon.outDebug("Setting '%s' is '%s' [1.5 format]" % (name, value))
             
             except Exception, details:
                 logger.exception("settings.wurm.xml failed to load: %s" % (str(details)))
@@ -1475,7 +1468,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
             option.attrib["name"] = a
             option.text           = "%s" % (self.settings[a], )
             
-            WurmCommon.outDebug("Saved UI setting '%s' ('%s')" % (a, self.settings[a]))
+            # WurmCommon.outDebug("Saved UI setting '%s' ('%s')" % (a, self.settings[a]))
         
         tree = ElementTree(root)
         tree.write(settingsfile, "utf-8")
@@ -1744,7 +1737,6 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         self.SetMenuBar(self.CreateMenuBar())
         
         # Create a StatusBar with 3 fields, Text & 2 progress gauges
-        # self.CreateStatusBar(3, _id("statusbar"))
         self.sb = CustomStatusBar(self)
         self.SetStatusBar(self.sb)
         
@@ -1869,8 +1861,8 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         _id = lambda x: self._getID("m>%s" % (x,))
         
         # File menu
-        filem.Append(_id("f>o"), _('&Open\tCtrl+O'), _('Load Addon list'))
-        filem.Append(_id("f>s"), _('&Save\tCtrl+S'), _('Save Addon list'))
+        filem.Append(wx.ID_OPEN, _('&Open\tCtrl+O'), _('Load Addon list'))
+        filem.Append(wx.ID_SAVE, _('&Save\tCtrl+S'), _('Save Addon list'))
         filem.AppendSeparator()
         filem.AppendMenu(_id("f>im"), _('Import'), imposubm)
         filem.AppendMenu(_id("f>ex"), _('Export'), exposubm)
@@ -1888,9 +1880,9 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         addonm.Append(_id("a>su"), _('One-Button Update\tF10'), _('Version check and, if needed, update all Addons'))
         addonm.Append(_id("a>dl"), _('Open download pages\tF9'), _('Open manual download pages for all addons that need update'))
         addonm.AppendSeparator()
-        addonm.Append(_id("a>n"), _('&New\tCtrl+N'), _('Insert a New entry into the Addon List'))
+        addonm.Append(wx.ID_NEW, _('&New\tCtrl+N'), _('Insert a New entry into the Addon List'))
         addonm.Append(_id("a>uf"), _('Update from file\tCtrl+F'), _('Update all selected addons from (individual) files'))
-        addonm.Append(_id("a>d"), _('&Delete'), _('Delete the selected Addons and all related')) # moved
+        addonm.Append(wx.ID_DELETE, _('&Delete'), _('Delete the selected Addons and all related')) # moved
         addonm.Append(_id("a>r"), _('&Restore from Backup\tCtrl+R'), _('Restore the selected Addons from Backup'))
         addonm.AppendSeparator()
         addonm.Append(_id("a>s"), _('S&can Directory\tCtrl+D'), _('Scan WoW Addon directory')) # moved
@@ -1974,10 +1966,10 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         self.menubar.Append(toolm, _('&Tools'))
         self.menubar.Append(helpm, '&Help') # Don't Translate this string otherwise it won't be put in the right place
         
-        # Bind the Button events to their handlers
+        # Bind the Menu events to their handlers
         # File menu
-        wx.EVT_MENU(self, _id("f>o"), self.OnLoad)
-        wx.EVT_MENU(self, _id("f>s"), self.OnSave)
+        wx.EVT_MENU(self, wx.ID_OPEN, self.OnLoad)
+        wx.EVT_MENU(self, wx.ID_SAVE, self.OnSave)
         wx.EVT_MENU(self, _id("f>im>a"), self.OnImport)
         wx.EVT_MENU(self, _id("f>im>ap"), self.OnImportPack)
         wx.EVT_MENU(self, _id("f>im>s"), self.OnMerge)
@@ -1989,8 +1981,9 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         wx.EVT_MENU(self, _id("a>su"), self.OnUpdateAllSmart)
         wx.EVT_MENU(self, _id("a>dl"), self.OnOpenAddonDlPageSmart)
         wx.EVT_MENU(self, _id("a>uf"), self.OnUpdateFromFile)
-        wx.EVT_MENU(self, _id("a>n"), self.OnAdd)
-        wx.EVT_MENU(self, _id("a>d"), self.OnDeleteSelected)
+        wx.EVT_MENU(self, wx.ID_NEW, self.OnAdd)
+        wx.EVT_MENU(self, wx.ID_DELETE, self.OnDeleteSelected)
+        # wx.EVT_MENU(self, _id("a>r"), self.OnAdvancedRestore) # for testing only
         wx.EVT_MENU(self, _id("a>r"), self.OnRestoreSelected)
         wx.EVT_MENU(self, _id("a>s"), self.OnScan)
         wx.EVT_MENU(self, _id("a>v"), self.OnSyncAll)
@@ -2050,7 +2043,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                 # Handle the NewAddon entry by changing its name to the friendly one
                 if fitem == WurmCommon.newaddon:
                     fitem = dia.fname.GetValue()
-                    del WurmCommon.addonlist[WurmCommon.newaddon]
+                    WurmCommon.addonlist.delete(WurmCommon.newaddon)
                     newaddon = True
                     # Flag as missing to prevent TOC errors
                     dia.specialflags["missing"] = True
@@ -2122,7 +2115,8 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         allSameSite = True # ...are set to the SAME site, not meta
         onlyOne     = True # ...are, well, one :P
         allWoWUI    = True # ...are from WoWUI
-        allCurse    = True # ...are from Curse/WoWAce (added after the Curse change, April 2009)
+        allWoWAce   = True # ...are from WoWAce
+        allCurse    = True # ...are from Curse (added after the Curse change, April 2009)
         
         # The flags are conflicting right now, but will be set to False as we check the addons one by one
         
@@ -2139,7 +2133,9 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                 allSite = False
             if site != "WoWUI": # manual downloads required
                 allWoWUI = False
-            if site != "CurseGaming" and site != "WoWAce": # manual downloads required
+            if site != "WoWAce" and site != "WoWAceClone": # manual downloads required
+                allWoWAce = False
+            if site != "CurseGaming": # manual downloads required
                 allCurse = False
             if site not in differentsites:
                 differentsites.append(site)
@@ -2161,7 +2157,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         popupm = wx.Menu()
         popupcnt = 0
         if allSite:
-            if not allCurse and not allWoWUI:
+            if not allCurse and not allWoWUI and not allWoWAce:
                 popupm.Append(_id("popup-smart"), _("Smartupdate"), _("Checks selected addon(s) for updates, and updates if needed"))
                 wx.EVT_MENU(self, _id("popup-smart"), self.OnUpdateSelectedSmart)
                 if popupm.GetMenuItemCount() > popupcnt:
@@ -2183,9 +2179,12 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                 if site != "GenericGit":
                     popupm.Append(_id("popup-visit"), _("Open addon page"), _("Opens this addon's webpage in your default browser"))
                     wx.EVT_MENU(self, _id("popup-visit"), self.OnOpenAddonPage)
-                if allCurse or allWoWUI:
+                if allCurse or allWoWUI or allWoWAce:
                     popupm.Append(_id("popup-visitdl"), _("Open download page"), _("Opens this addon's download page for the latest version in your browser"))
                     wx.EVT_MENU(self, _id("popup-visitdl"), self.OnOpenAddonDlPage)
+                if allWoWAce:
+                    popupm.Append(_id("popup-visitfldl"), _("Open files page"), _("Opens this addon's download page for all versions in your browser"))
+                    wx.EVT_MENU(self, _id("popup-visitfldl"), self.OnOpenAddonFilesDlPage)
         
         if allUnknown:
             popupm.Append(_id("popup-id"), _("Identify (online DB)"), _("Identifies selected addon(s) using the wuu.vagabonds.info database"))
@@ -2195,10 +2194,10 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
             popupm.AppendSeparator()
             popupcnt = popupm.GetMenuItemCount()
         
-        if allCurse or allWoWUI:
+        if allCurse or allWoWUI or allWoWAce:
             popupm.Append(_id("popup-updfile"), _("Update from file"), _("Updates the selected addon(s) from downloaded file(s)"))
             wx.EVT_MENU(self, _id("popup-updfile"), self.OnUpdateFromFile)
-        if not allCurse and not allWoWUI:
+        if not allCurse and not allWoWUI and not allWoWAce:
             popupm.Append(_id("popup-update"), _("Update"), _("Forces an update of the addon(s)"))
             wx.EVT_MENU(self, _id("popup-update"), self.OnUpdateAddon)
         
@@ -2423,10 +2422,12 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                 if dlg.ShowModal() == wx.ID_OK:
                     if dlg.toRestore != None:
                         WurmCommon.outMessage("DEBUG: Would restore version %s from %s" % (dlg.toRestore[0], dlg.toRestore[2]))
+                else:
+                    WurmCommon.outStatus(_("No previous versions chosen for %(aname)s") % {'aname': addon.localname})
             except Exception, details:
                 msg = _("Error on advanced restore: %(dets)s") % {'dets': str(details)}
                 WurmCommon.outError(msg)
-                WurmCommon.outStatus(msg)
+                # WurmCommon.outStatus(msg)
         finally:
             dlg.Destroy()
     
@@ -2610,7 +2611,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         """"""
         tracer.debug("WurmUI - OnClose")
         
-        if WurmCommon.listchanged:
+        if WurmCommon.listchanged[WurmCommon.addonlist._id]:
             # Unsaved changes
             msg = wx.MessageDialog(self, _("You have some unsaved changes. Save now?"), _("Unsaved changes"), style=wx.YES_NO|wx.CANCEL|wx.ICON_QUESTION)
             answer = msg.ShowModal()
@@ -2932,7 +2933,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
         
         if dlg.ShowModal() == wx.ID_OK:
             path = dlg.GetPath()
-            WurmCommon.listchanged = False
+            WurmCommon.listchanged[WurmCommon.addonlist._id] = False
             (WurmCommon.addonlist, WurmCommon.toclist) = Wurm.getAddonSettings(path)
             
             msg = wx.MessageDialog(self, _("Should WUU download and install all Addons imported automatically? This SHOULD be done on an empty AddOns-directory!"), _("Install imported Addons?"), style=wx.YES_NO|wx.ICON_WARNING)
@@ -2945,7 +2946,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
             elif answer == wx.ID_NO:
                 WurmCommon.outStatus(_("File %(path)s imported, no Addons installed") % {'path': path})
             
-            WurmCommon.listchanged = True
+            WurmCommon.listchanged[WurmCommon.addonlist._id] = True
         
         dlg.Destroy()
     
@@ -2962,7 +2963,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                 WurmCommon.outError("Invalid addon pack ID - should be 32 characters long")
                 return False
             
-            WurmCommon.listchanged = False
+            WurmCommon.listchanged[WurmCommon.addonlist._id] = False
             (WurmCommon.addonlist, WurmCommon.toclist) = Wurm.getAddonSettingsPack(packid)
             
             msg = wx.MessageDialog(self, _("Should WUU download and install all Addons imported automatically? This SHOULD be done on an empty AddOns-directory!"), _("Install imported Addons?"), style=wx.YES_NO|wx.ICON_WARNING)
@@ -2975,7 +2976,7 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
             elif answer == wx.ID_NO:
                 WurmCommon.outStatus(_("Addon pack %(packid)s imported, no Addons installed") % {'packid': packid})
             
-            WurmCommon.listchanged = True
+            WurmCommon.listchanged[WurmCommon.addonlist._id] = True
         
         dlg.Destroy()
     
@@ -3193,6 +3194,20 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                     if addon in WurmCommon.addons:
                         self.updateAddonFromFileSelect(addon)
                         wx.Yield()
+    
+    
+    def OnOpenAddonFilesDlPage(self, event):
+        """ Opens the first selected addon's all files page in the primary browser """
+        
+        curitem = -1
+        curitem = self.lc.GetNextItem(curitem, wx.LIST_NEXT_ALL, wx.LIST_STATE_SELECTED)
+        if not curitem == -1:
+            fitem = self.lc.GetItem(curitem, 0).GetText()
+            
+            if fitem in WurmCommon.addons:
+                url = WurmCommon.addons[fitem].getAddonFilesDlURL()
+                if url:
+                    webbrowser.open(url)
     
     
     def OnOpenSiteAuctioneer(self, event):
@@ -3420,10 +3435,6 @@ class WurmUI(wx.Frame, listmix.ColumnSorterMixin, WurmUtility.TypeAheadListCtrlM
                     wx.Yield()
         else:
             Wurm.refreshAddons()
-        # 
-        # # If SaL is installed, enable the menu item
-        # if WurmCommon.SaLinstalled:
-        #     self.menubar.Enable(self._getID("m>t>wa"), True)
             
         self.RefreshAddonList(count=True)
     
